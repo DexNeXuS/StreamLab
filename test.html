@@ -3,35 +3,171 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Domain test — Streaming</title>
+    <title>Domain test — DexNeXuS Streaming Lab</title>
     <style>
+      /* Match real site: variables + base */
+      :root {
+        color-scheme: dark;
+        --dx-bg: #07070c;
+        --dx-bg-2: #0d0d16;
+        --dx-surface: rgba(255, 255, 255, 0.06);
+        --dx-surface-2: rgba(255, 255, 255, 0.09);
+        --dx-border: rgba(255, 255, 255, 0.12);
+        --dx-text: #f5f7ff;
+        --dx-text-2: rgba(245, 247, 255, 0.75);
+        --dx-text-3: rgba(245, 247, 255, 0.55);
+        --dx-purple: #8b5cf6;
+        --dx-purple-2: #c084fc;
+        --dx-blue: #60a5fa;
+        --dx-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
+        --dx-radius: 14px;
+        --dx-radius-sm: 10px;
+        --dx-max: 1180px;
+        --dx-font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+      }
       * { box-sizing: border-box; }
+      html, body { height: 100%; margin: 0; font-family: var(--dx-font); color: var(--dx-text); }
       body {
-        font-family: system-ui, -apple-system, sans-serif;
-        margin: 0;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #1a1a2e;
-        color: #eee;
-        padding: 1rem;
+        background: radial-gradient(900px 600px at 20% 0%, rgba(139, 92, 246, 0.25), transparent 60%),
+          radial-gradient(900px 600px at 90% 10%, rgba(96, 165, 250, 0.18), transparent 60%),
+          radial-gradient(700px 500px at 30% 85%, rgba(192, 132, 252, 0.13), transparent 60%),
+          linear-gradient(135deg, var(--dx-bg), var(--dx-bg-2));
       }
-      .box {
-        text-align: center;
-        padding: 2rem;
-        border: 2px solid #6c5ce7;
-        border-radius: 12px;
-        max-width: 420px;
+      a { color: inherit; }
+
+      .dx-skip-link {
+        position: absolute; left: 12px; top: 12px;
+        padding: 10px 12px; border-radius: 10px; border: 1px solid var(--dx-border);
+        background: rgba(0, 0, 0, 0.7); box-shadow: var(--dx-shadow);
+        transform: translateY(-150%); transition: transform 120ms ease-out; z-index: 9999;
       }
-      h1 { margin: 0 0 0.5rem; font-size: 1.5rem; color: #a29bfe; }
-      p { margin: 0; opacity: 0.9; }
+      .dx-skip-link:focus { transform: translateY(0); outline: 2px solid rgba(139, 92, 246, 0.8); outline-offset: 2px; }
+
+      .dx-container { max-width: var(--dx-max); margin: 0 auto; padding: 0 18px; }
+
+      /* Header */
+      .dx-header {
+        position: sticky; top: 0; z-index: 50;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(7, 7, 12, 0.72);
+        backdrop-filter: blur(18px);
+      }
+      .dx-header-inner {
+        display: flex; align-items: center; justify-content: space-between; gap: 18px;
+        padding: 14px 0;
+      }
+      .dx-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+      .dx-logo {
+        width: 42px; height: 42px; border-radius: 14px;
+        display: grid; place-items: center; font-weight: 800; letter-spacing: -0.04em;
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.95), rgba(192, 132, 252, 0.9));
+        box-shadow: 0 14px 36px rgba(139, 92, 246, 0.25);
+        color: #fff;
+      }
+      .dx-brand-title {
+        display: block; font-weight: 800; letter-spacing: -0.03em;
+        background: linear-gradient(135deg, var(--dx-text), var(--dx-purple-2));
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .dx-brand-subtitle {
+        display: block; font-size: 12px; color: var(--dx-text-3); margin-top: 1px;
+        font-weight: 600; letter-spacing: 0.06em;
+      }
+      .dx-header-tagline {
+        display: none; font-size: 0.8rem; color: var(--dx-text-2); margin: 2px 0 0; font-weight: 400;
+      }
+      @media (min-width: 869px) { .dx-header-tagline { display: block; } }
+      .dx-test-badge {
+        font-size: 12px; padding: 6px 10px; border-radius: 999px;
+        border: 1px solid rgba(139, 92, 246, 0.35);
+        background: rgba(139, 92, 246, 0.14);
+        color: var(--dx-purple-2);
+      }
+
+      /* Main + card */
+      .dx-main { padding: 22px 0 58px; }
+      .dx-content h1 { font-size: clamp(26px, 3vw, 38px); letter-spacing: -0.03em; margin: 0 0 10px; }
+      .dx-content p { color: var(--dx-text-2); line-height: 1.7; margin: 0 0 14px; }
+      .dx-card {
+        border-radius: var(--dx-radius); border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 18px 55px rgba(0, 0, 0, 0.25);
+        padding: 18px;
+      }
+      .dx-content-lead { margin: 0 0 14px; font-size: 1.05rem; line-height: 1.65; color: var(--dx-text-2); }
+
+      /* Footer */
+      .dx-footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(7, 7, 12, 0.55);
+      }
+      .dx-footer-top {
+        height: 2px;
+        background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.35), rgba(96, 165, 250, 0.25), transparent);
+      }
+      .dx-footer-inner {
+        display: flex; align-items: center; justify-content: space-between; gap: 14px;
+        padding: 20px 0; flex-wrap: wrap;
+      }
+      .dx-footer-title { font-weight: 800; letter-spacing: -0.03em; }
+      .dx-footer-muted { color: var(--dx-text-3); font-size: 12px; }
+      .dx-footer-links { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+      .dx-link {
+        color: rgba(245, 247, 255, 0.86); text-decoration: none;
+        border-bottom: 1px dashed rgba(245, 247, 255, 0.35); font-size: 13px;
+      }
+      .dx-link:hover { border-bottom-color: rgba(245, 247, 255, 0.7); }
+      .dx-muted { color: var(--dx-text-3); font-size: 12px; margin-top: 10px; }
     </style>
   </head>
   <body>
-    <div class="box">
-      <h1>Domain test — OK</h1>
-      <p>If you see this, your domain is working. Ready to upload the full Streaming site.</p>
-    </div>
+    <a class="dx-skip-link" href="#main">Skip to content</a>
+
+    <header class="dx-header">
+      <div class="dx-header-inner dx-container">
+        <a class="dx-brand" href="test.html" aria-label="DexNeXuS home">
+          <span class="dx-logo" aria-hidden="true">D</span>
+          <span class="dx-brand-text">
+            <span class="dx-brand-title">DexNeXuS</span>
+            <span class="dx-brand-subtitle">Streaming Lab</span>
+            <span class="dx-header-tagline">Streaming resources</span>
+          </span>
+        </a>
+        <span class="dx-test-badge">Domain test</span>
+      </div>
+    </header>
+
+    <main id="main" class="dx-main">
+      <div class="dx-container">
+        <article class="dx-content">
+          <div class="dx-card">
+            <h1>Domain test — OK</h1>
+            <p class="dx-content-lead">If you see this page, your domain is working and you can upload the full Streaming site.</p>
+            <p>This is a standalone test page with the same look and feel as the real site: same header, colours, and footer. No navigation, search, or images — just enough to confirm the domain serves correctly.</p>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <footer class="dx-footer">
+      <div class="dx-footer-top"></div>
+      <div class="dx-container dx-footer-inner">
+        <div class="dx-footer-left">
+          <div class="dx-footer-title">DexNeXuS</div>
+          <div class="dx-footer-muted">Built for sharing streaming resources.</div>
+        </div>
+        <div class="dx-footer-right">
+          <nav class="dx-footer-links" aria-label="Footer links">
+            <a class="dx-link" href="#main">About</a>
+            <a class="dx-link" href="#main">Music</a>
+            <a class="dx-link" href="#main">Links</a>
+            <a class="dx-link" href="#main">Privacy</a>
+            <a class="dx-link" href="#main">Terms</a>
+          </nav>
+          <p class="dx-muted">Test page — no external assets.</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
