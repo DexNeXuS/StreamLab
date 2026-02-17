@@ -168,20 +168,22 @@ export function createMusic(api) {
     const titleEl = document.getElementById("dxMusicTitle");
     const artistEl = document.getElementById("dxMusicArtist");
     if (!audio || !player) return;
-    const src = getTrackAudioSrc(track, base);
-    if (!src) return;
-    audio.src = src;
-    audio.load();
-    audio.play().catch(() => {});
+    // Show player and update UI first so it appears even if the audio source fails (e.g. on GitHub with wrong URL)
     if (artworkEl) artworkEl.src = (track.artworkUrl && (track.artworkUrl.startsWith("http://") || track.artworkUrl.startsWith("https://"))) ? track.artworkUrl.trim() : (track.artwork ? resolveImagePath(track.artwork, base) : resolveImagePath("music-placeholder.png", base));
     if (titleEl) titleEl.textContent = track.title || "—";
     if (artistEl) artistEl.textContent = track.artist || "—";
     player.hidden = false;
     document.body.classList.add("dx-has-music-player");
-    // Wait for layout so wrap clientWidth is correct before measuring overflow
     requestAnimationFrame(() => {
       requestAnimationFrame(() => applyMusicTextScroll());
     });
+    const src = getTrackAudioSrc(track, base);
+    if (!src) return;
+    try {
+      audio.src = src;
+      audio.load();
+      audio.play().catch(() => {});
+    } catch (_) {}
   }
 
   function applyMusicTextScroll() {
