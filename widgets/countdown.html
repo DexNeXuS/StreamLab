@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Countdown</title>
+  <style>
+    body { margin: 0; font-family: ui-monospace, monospace; background: transparent; }
+    .countdown {
+      padding: 14px 24px;
+      font-size: 36px;
+      font-weight: 700;
+      color: rgba(139,92,246,0.95);
+      text-shadow: 0 0 20px rgba(139,92,246,0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="countdown" id="out">00:00</div>
+  <script>
+    // Edit targetDate for your countdown
+    const targetDate = new Date();
+    targetDate.setHours(targetDate.getHours() + 1);
+    targetDate.setMinutes(0);
+    targetDate.setSeconds(0);
+
+    function pad(n) { return Math.floor(n).toString().padStart(2, '0'); }
+    function tick() {
+      const now = Date.now();
+      const left = Math.max(0, targetDate - now);
+      const m = Math.floor(left / 60000);
+      const s = Math.floor((left % 60000) / 1000);
+      document.getElementById('out').textContent = pad(m) + ':' + pad(s);
+    }
+    tick();
+    setInterval(tick, 1000);
+  </script>
+</body>
+</html>

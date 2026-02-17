@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Clock</title>
+  <style>
+    body { margin: 0; font-family: ui-sans-serif, system-ui; background: transparent; }
+    .clock {
+      padding: 12px 20px;
+      font-size: 28px;
+      font-weight: 700;
+      color: rgba(245,247,255,0.95);
+      letter-spacing: 0.02em;
+    }
+  </style>
+</head>
+<body>
+  <div class="clock" id="time">--:--:--</div>
+  <script>
+    function pad(n) { return String(n).padStart(2, '0'); }
+    function tick() {
+      const d = new Date();
+      document.getElementById('time').textContent =
+        pad(d.getHours()) + ':' + pad(d.getMinutes()) + ':' + pad(d.getSeconds());
+    }
+    tick();
+    setInterval(tick, 1000);
+  </script>
+</body>
+</html>

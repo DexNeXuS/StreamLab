@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Date Display</title>
+  <style>
+    body { margin: 0; font-family: ui-sans-serif, system-ui; background: transparent; }
+    .date { padding: 10px 16px; font-size: 18px; color: rgba(245,247,255,0.9); }
+  </style>
+</head>
+<body>
+  <div class="date" id="out">--</div>
+  <script>
+    const opts = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' };
+    document.getElementById('out').textContent = new Date().toLocaleDateString('en-GB', opts);
+  </script>
+</body>
+</html>

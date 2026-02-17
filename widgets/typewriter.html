@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typewriter / Text effects</title>
+  <style>
+    :root {
+      --text: rgba(245, 247, 255, 0.95);
+      --purple: rgba(139, 92, 246, 0.95);
+      --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    body { margin: 0; font-family: var(--font); background: transparent; }
+    /* Positioning: bottom-left or bottom-right, text only (no card/border) */
+    .tw-wrap {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      padding: 16px 20px;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    .tw-wrap.tw-position-right {
+      left: auto;
+      right: 0;
+      text-align: right;
+    }
+    .tw-text {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: 0.02em;
+      line-height: 1.3;
+    }
+    .tw-cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      margin-left: 2px;
+      background: var(--purple);
+      animation: blink 0.8s step-end infinite;
+      vertical-align: text-bottom;
+    }
+    .tw-position-right .tw-cursor { margin-left: 2px; margin-right: 0; }
+    @keyframes blink { 50% { opacity: 0; } }
+    /* Scroll effect: full-width strip, text scrolls across */
+    .tw-scroll-wrap {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      padding: 16px 0;
+    }
+    .tw-scroll-inner {
+      display: inline-block;
+      white-space: nowrap;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: 0.02em;
+      padding-left: 100%;
+      will-change: transform;
+    }
+    .tw-scroll-wrap.tw-scroll-right .tw-scroll-inner {
+      animation: scroll-right-to-left var(--scroll-dur, 8s) linear forwards;
+    }
+    .tw-scroll-wrap.tw-scroll-left .tw-scroll-inner {
+      animation: scroll-left-to-right var(--scroll-dur, 8s) linear forwards;
+    }
+    @keyframes scroll-right-to-left {
+      from { transform: translateX(100vw); }
+      to { transform: translateX(-100%); }
+    }
+    @keyframes scroll-left-to-right {
+      from { transform: translateX(-100%); }
+      to { transform: translateX(100vw); }
+    }
+  </style>
+</head>
+<body>
+  <div class="tw-wrap" id="wrap">
+    <div class="tw-text" id="out"><span id="visible"></span><span class="tw-cursor" id="cursor"></span></div>
+  </div>
+  <div class="tw-scroll-wrap tw-scroll-right" id="scrollWrap" hidden aria-hidden="true">
+    <div class="tw-scroll-inner" id="scrollInner"></div>
+  </div>
+  <script>
+(function() {
+  const DEFAULT_LINES = [
+    "Loading...",
+    "Almost there...",
+    "Get ready...",
+    "Starting soon..."
+  ];
+
+  function parseParams() {
+    const params = new URLSearchParams(window.location.search);
+    const linesParam = params.get("lines") || params.get("text");
+    const lines = linesParam
+      ? linesParam.split(",").map(s => decodeURIComponent(s.trim())).filter(Boolean)
+      : DEFAULT_LINES;
+    const position = (params.get("position") || "left").toLowerCase();
+    return {
+      effect: (params.get("effect") || "typewriter").toLowerCase().replace(/\s+/g, "-"),
+      position: position === "right" ? "right" : "left",
+      lines,
+      interval: Math.max(2000, parseInt(params.get("interval"), 10) || 5000),
+      typingSpeed: Math.max(10, parseInt(params.get("typing_speed"), 10) || 50),
+      wordDelay: Math.max(50, parseInt(params.get("word_delay"), 10) || 200),
+      customChars: (params.get("custom_chars") || "?*#@$%").slice(0, 20),
+      scrollDuration: Math.max(3, parseInt(params.get("scroll_duration"), 10) || 8)
+    };
+  }
+
+  const config = parseParams();
+  const wrap = document.getElementById("wrap");
+  const out = document.getElementById("out");
+  const visible = document.getElementById("visible");
+  const cursor = document.getElementById("cursor");
+  const scrollWrap = document.getElementById("scrollWrap");
+  const scrollInner = document.getElementById("scrollInner");
+  let lineIndex = 0;
+  let timerId = null;
+
+  // Position: bottom-left or bottom-right
+  if (config.position === "right") {
+    wrap.classList.add("tw-position-right");
+  }
+
+  function showFull(text) {
+    visible.textContent = text;
+    cursor.style.display = "";
+  }
+
+  function getMask() {
+    if (config.effect === "reveal-ascii") return "!@#$%^&*()_+-=[]{}|;':\",./<>?`~";
+    if (config.effect === "reveal-binary") return "01";
+    if (config.effect === "reveal-custom") return config.customChars || "?";
+    return "?";
+  }
+
+  // Left: type left to right (slice(0, i)). Right: type right to left (slice(-i))
+  function typewriter(text, done) {
+    let i = 0;
+    visible.textContent = "";
+    cursor.style.display = "inline-block";
+    const fromRight = config.position === "right";
+    function tick() {
+      if (i <= text.length) {
+        visible.textContent = fromRight ? text.slice(-i) : text.slice(0, i);
+        i++;
+        timerId = setTimeout(tick, config.typingSpeed);
+      } else {
+        timerId = null;
+        done();
+      }
+    }
+    tick();
+  }
+
+  function wordByWord(text, done) {
+    const words = text.split(/(\s+)/);
+    let i = 0;
+    visible.textContent = "";
+    cursor.style.display = "inline-block";
+    const fromRight = config.position === "right";
+    function tick() {
+      if (i < words.length) {
+        visible.textContent = fromRight ? words.slice(-(i + 1)).join("") : words.slice(0, i + 1).join("");
+        i++;
+        timerId = setTimeout(tick, config.wordDelay);
+      } else {
+        visible.textContent = text;
+        timerId = null;
+        done();
+      }
+    }
+    tick();
+  }
+
+  function reveal(text, done) {
+    const mask = getMask();
+    let i = 0;
+    visible.textContent = "";
+    cursor.style.display = "inline-block";
+    const fromRight = config.position === "right";
+    function tick() {
+      if (i < text.length) {
+        if (fromRight) {
+          const revealed = text.slice(0, text.length - i) + Array.from({ length: i }, () => mask[Math.floor(Math.random() * mask.length)]).join("");
+          visible.textContent = revealed;
+        } else {
+          const revealed = text.slice(0, i + 1) + Array.from({ length: text.length - i - 1 }, () => mask[Math.floor(Math.random() * mask.length)]).join("");
+          visible.textContent = revealed;
+        }
+        i++;
+        timerId = setTimeout(tick, config.typingSpeed);
+      } else {
+        visible.textContent = text;
+        timerId = null;
+        done();
+      }
+    }
+    tick();
+  }
+
+  function scrollEffect(text, done) {
+    wrap.hidden = true;
+    wrap.setAttribute("aria-hidden", "true");
+    scrollWrap.hidden = false;
+    scrollWrap.removeAttribute("aria-hidden");
+    scrollWrap.style.setProperty("--scroll-dur", config.scrollDuration + "s");
+    scrollInner.textContent = text;
+    scrollInner.style.animation = "none";
+    scrollWrap.classList.remove("tw-scroll-right", "tw-scroll-left");
+    scrollInner.offsetHeight;
+    scrollWrap.classList.add(config.position === "right" ? "tw-scroll-right" : "tw-scroll-left");
+    const onEnd = function() {
+      scrollInner.removeEventListener("animationend", onEnd);
+      scrollWrap.hidden = true;
+      scrollWrap.setAttribute("aria-hidden", "true");
+      wrap.hidden = false;
+      wrap.removeAttribute("aria-hidden");
+      done();
+    };
+    scrollInner.addEventListener("animationend", onEnd);
+  }
+
+  function runEffect(text, done) {
+    if (timerId) clearTimeout(timerId);
+    const e = config.effect;
+    if (e === "none" || e === "instant") {
+      showFull(text);
+      done();
+      return;
+    }
+    if (e === "scroll") {
+      scrollEffect(text, done);
+      return;
+    }
+    if (e === "typewriter") typewriter(text, done);
+    else if (e === "word-by-word") wordByWord(text, done);
+    else if (["reveal-ascii", "reveal-binary", "reveal-custom"].includes(e)) reveal(text, done);
+    else typewriter(text, done);
+  }
+
+  function nextLine() {
+    if (!config.lines.length) return;
+    const text = config.lines[lineIndex % config.lines.length];
+    lineIndex++;
+    runEffect(text, function() {
+      cursor.style.display = "";
+      timerId = setTimeout(nextLine, config.interval);
+    });
+  }
+
+  nextLine();
+})();
+  </script>
+</body>
+</html>
