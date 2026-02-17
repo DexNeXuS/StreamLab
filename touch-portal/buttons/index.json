@@ -1,0 +1,8 @@
+[
+  {
+    "id": "get-commands",
+    "name": "Get Commands",
+    "description": "Export and post Streamer.bot commands to chat via JSON.",
+    "file": "get-commands-touch-portal-button.tpb"
+  }
+]

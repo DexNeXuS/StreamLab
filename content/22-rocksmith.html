@@ -1,0 +1,35 @@
+<!--dex
+title: Rocksmith
+group: Resources
+order: 22
+description: OBS overlay for Rocksmith 2014 + RockSniffer; current song and live stats.
+tags: rocksmith, rocksniffer, overlay, obs, streamerbot
+-->
+
+<section class="dx-card">
+  <div class="dx-page-hero-wrap">
+    <img src="assets/images/page-images/rocksmith.png" alt="" class="dx-page-card-img" loading="lazy" />
+  </div>
+  <div class="dx-badge dx-badge--blue">OBS + RockSniffer</div>
+  <h1 style="margin-top: 10px;">Rocksmith widget</h1>
+  <p>
+    <strong>What it is:</strong> A browser-source overlay for OBS that shows your current Rocksmith 2014 session: now playing (song, artist, tuning, progress), performance (score, accuracy, notes), streak, accuracy, and optional session/custom cards. It polls <strong>RockSniffer</strong> (local HTTP) for live stats and can receive updates from Streamer.bot via a global variable or WebSocket.
+  </p>
+  <p class="dx-muted" style="margin-top: 10px;">
+    <strong>RockSniffer:</strong> <a class="dx-link" href="https://github.com/nickspooner/rocksniffer" target="_blank" rel="noopener noreferrer">nickspooner/rocksniffer</a> — run it locally so the overlay can read session data.
+  </p>
+</section>
+
+<section class="dx-card" style="margin-top: 14px;">
+  <h2 style="margin-top:0;">Overlay URL (OBS Browser Source)</h2>
+  <p class="dx-muted">In OBS, add a <strong>Browser Source</strong> and set the URL below. You can add query params for position, style, and RockSniffer/Streamer.bot (e.g. <code>?pos=br&style=narrow&rsPort=9938</code>).</p>
+  <div data-dx-overlay-url="rocksmith/index.html"></div>
+</section>
+
+<details class="dx-accordion dx-card" style="margin-top: 14px;">
+  <summary>How to use &amp; control</summary>
+  <div class="dx-accordion-body">
+    <p class="dx-muted" style="margin-bottom: 14px;">Full instructions: RockSniffer, Streamer.bot (global variable + WebSocket), URL parameters, toasts, and optional Widget → Streamer.bot.</p>
+    <div data-dx-doc="obs/overlays/rocksmith/README.md"></div>
+  </div>
+</details>

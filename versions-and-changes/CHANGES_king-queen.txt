@@ -1,0 +1,6 @@
+King-Queen overlay — Changelog
+================================
+
+1.0.0 — Initial release
+- Two-panel King/Queen overlay for OBS
+- WebSocket trigger via Streamer.bot action

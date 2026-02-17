@@ -1,0 +1,55 @@
+<!--dex
+title: Random Media From Folder
+group: Resources
+order: 26
+description: Streamer.bot action to pick a random file (video, image, music, or text) from a folder.
+tags: random media, streamerbot, folder, video, image, music
+-->
+
+<section class="dx-card">
+  <div class="dx-page-hero-wrap">
+    <img src="assets/images/page-images/random-media-from-folder.png" alt="" class="dx-page-card-img" loading="lazy" />
+  </div>
+  <div class="dx-badge dx-badge--green">Streamer.bot</div>
+  <h1 style="margin-top: 10px;">Random Media From Folder</h1>
+  <p>
+    <strong>What it is:</strong> A Streamer.bot action that picks a random file from a folder. You pass the folder path and the type (video, image, music, or text); the action selects one matching file and sets the full path in the argument <strong>randomFile</strong> so other actions (e.g. OBS media source, play sound) can use it.
+  </p>
+</section>
+
+<section class="dx-card" style="margin-top: 14px;">
+  <h2 style="margin-top:0;">Action arguments</h2>
+  <ul style="margin: 0; padding-left: 18px; color: var(--dx-text-2); line-height: 1.8;">
+    <li><strong>folderPath</strong> — Full path to the folder to scan (required).</li>
+    <li><strong>fileType</strong> — One of: <code>video</code>, <code>image</code>, <code>music</code>, <code>text</code> (required). The action only considers files with matching extensions (e.g. .mp4, .png, .mp3, .txt).</li>
+  </ul>
+  <p class="dx-muted" style="margin-top: 10px;">Output: <strong>randomFile</strong> — full path to the chosen file.</p>
+</section>
+
+<details class="dx-accordion dx-card" style="margin-top: 14px;">
+  <summary>How to set up</summary>
+  <div class="dx-accordion-body">
+    <p class="dx-muted">Import the action (Copy / Download / Open below) and pass <code>folderPath</code> (full path to a folder) and <code>fileType</code> (video, image, music, or text). Chain it with an OBS media source or play-sound action that uses the <code>randomFile</code> output. Add <code>assets/images/page-images/random-media-setup.png</code> for a screenshot.</p>
+  </div>
+</details>
+
+<details class="dx-accordion dx-card" style="margin-top: 14px;">
+  <summary>Examples</summary>
+  <div class="dx-accordion-body">
+    <p class="dx-muted">E.g. random outro video, random sound effect, or random image for a scene. Add <code>assets/images/page-images/random-media-example.png</code> to show your workflow.</p>
+  </div>
+</details>
+
+<section class="dx-card" style="margin-top: 14px;">
+  <h2 style="margin-top:0;">Action import</h2>
+  <p class="dx-muted">Use the box below to <strong>Copy</strong>, <strong>Download</strong>, or <strong>Open</strong> the import file. Then in Streamer.bot: <strong>Import → Import from clipboard</strong>.</p>
+  <div data-dx-import-box="streamerbot/action-imports/random-media-from-folder.txt"></div>
+</section>
+
+<section class="dx-card" style="margin-top: 14px;">
+  <h2 style="margin-top:0;">Reference script</h2>
+  <p class="dx-muted">Download the C# script used by this action (for reference or customisation):</p>
+  <ul style="margin: 0; padding-left: 18px; color: var(--dx-text-2); line-height: 1.8;">
+    <li><a class="dx-link" href="streamerbot/scripts/random-media-from-folder/Run.cs" download target="_blank" rel="noopener noreferrer">Run.cs</a></li>
+  </ul>
+</section>

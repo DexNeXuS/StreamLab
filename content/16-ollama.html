@@ -1,0 +1,54 @@
+<!--dex
+title: Ollama (Streamer.bot)
+group: Resources
+order: 21
+description: Streamer.bot action for Ollama chat replies with INI config.
+tags: ollama, streamerbot, chatbot, ini
+-->
+
+<section class="dx-card">
+  <div class="dx-page-hero-wrap">
+    <img src="assets/images/page-images/ollama.png" alt="" class="dx-page-card-img" loading="lazy" />
+  </div>
+  <div class="dx-badge dx-badge--green">Streamer.bot</div>
+  <h1 style="margin-top: 10px;">Ollama Run (INI config)</h1>
+  <p>
+    <strong>What Ollama is:</strong> Ollama runs large language models (LLMs) locally on your machine. You need Ollama installed and running (with a model pulled, e.g. <code>ollama run llama3.2</code>) for this action to work.
+  </p>
+  <p>
+    This page provides a Streamer.bot action that calls Ollama for chat-style replies. All options (model, system prompt, reply chance, etc.) are read from an INI file. After importing, set the action’s <strong>iniPath</strong> argument to the full path of your <code>ollama.ini</code>.
+  </p>
+  <p class="dx-muted" style="margin-top: 10px;">
+    <strong>Official:</strong> <a class="dx-link" href="https://ollama.com/" target="_blank" rel="noopener noreferrer">Ollama</a> — download and run LLMs locally.
+  </p>
+</section>
+
+<section class="dx-card" style="margin-top: 14px;">
+  <h2 style="margin-top:0;">Action import</h2>
+  <p class="dx-muted">Use the box below to <strong>Copy</strong>, <strong>Download</strong>, or <strong>Open</strong> the import file. In Streamer.bot go to <strong>Import → Import from clipboard</strong>. After importing, set the <strong>iniPath</strong> argument to the full path of your <code>ollama.ini</code> file.</p>
+  <div data-dx-import-box="streamerbot/action-imports/ollama.txt"></div>
+</section>
+
+<details class="dx-accordion dx-card" style="margin-top: 14px;">
+  <summary>How to set up</summary>
+  <div class="dx-accordion-body">
+    <p class="dx-muted">Install and run Ollama, pull a model (e.g. <code>ollama run llama3.2</code>). Import the action below, then set the <strong>iniPath</strong> argument to the full path of your <code>ollama.ini</code>. You can add a setup screenshot as <code>assets/images/page-images/ollama-setup.png</code>.</p>
+  </div>
+</details>
+
+<details class="dx-accordion dx-card" style="margin-top: 14px;">
+  <summary>Examples</summary>
+  <div class="dx-accordion-body">
+    <p class="dx-muted">Use the action from a chat command, timer, or channel point reward. Edit <code>ollama.ini</code> to change model, system prompt, and reply chance. Add an example screenshot as <code>assets/images/page-images/ollama-example.png</code> if you want.</p>
+  </div>
+</details>
+
+<section class="dx-card" style="margin-top: 14px;">
+  <h2 style="margin-top:0;">Resources</h2>
+  <p>Download the C# script and sample INI to inspect or customize:</p>
+  <ul style="margin: 0; padding-left: 18px; color: var(--dx-text-2); line-height: 1.8;">
+    <li><a class="dx-link" href="streamerbot/scripts/ollama/ollama-run.cs" download target="_blank" rel="noopener noreferrer">ollama-run.cs</a> — Streamer.bot inline script (reference)</li>
+    <li><a class="dx-link" href="streamerbot/scripts/ollama/ollama.ini" download target="_blank" rel="noopener noreferrer">ollama.ini</a> — Sample config (model, personality, behaviour)</li>
+  </ul>
+  <p class="dx-muted" style="margin-top: 10px;">The imported action in Streamer.bot is what runs; the .cs file is for reference. Edit <code>ollama.ini</code> to change model, system prompt, reply chance, and other options.</p>
+</section>

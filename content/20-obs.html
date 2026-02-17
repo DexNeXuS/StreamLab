@@ -1,0 +1,121 @@
+<!--dex
+title: OBS
+group: Resources
+order: 11
+description: Scenes, sources, and widget notes.
+tags: obs, streaming
+-->
+
+<section class="dx-card">
+  <div class="dx-page-hero-wrap">
+    <img src="assets/images/page-images/obs.png" alt="" class="dx-page-card-img" loading="lazy" />
+  </div>
+  <div class="dx-badge dx-badge--blue">OBS</div>
+  <h1 style="margin-top: 10px;">OBS: scenes, scripts, plugins, and setups</h1>
+  <p>
+    This is where I’ll document the OBS setups I use and share the resources needed to recreate them.
+  </p>
+  <p class="dx-muted" style="margin-top: 10px;">
+    <strong>Official:</strong> <a class="dx-link" href="https://obsproject.com/" target="_blank" rel="noopener noreferrer">OBS Project</a> — download, docs, and <a class="dx-link" href="https://obsproject.com/forum/resources/categories/obs-studio-plugins.6/" target="_blank" rel="noopener noreferrer">plugins forum</a>.
+  </p>
+</section>
+
+<details class="dx-accordion dx-card" style="margin-top: 14px;">
+  <summary>How to set up</summary>
+  <div class="dx-accordion-body">
+    <p class="dx-muted">Basic setup: video capture for your camera, game or window capture for gameplay, and audio capture for mic and desktop sound. Add browser sources for overlays using the URLs from the Overlays tab below. The real magic is in plugins — check the OBS plugin forum and experiment. Optional setup screenshot: <code>assets/images/page-images/obs-setup.png</code>.</p>
+  </div>
+</details>
+
+<details class="dx-accordion dx-card" style="margin-top: 14px;">
+  <summary>Examples</summary>
+  <div class="dx-accordion-body">
+    <p class="dx-muted">Scene layouts, source setups, and before/after screenshots. Add <code>assets/images/page-images/obs-example.png</code> (or more) to show your setup.</p>
+  </div>
+</details>
+
+<section class="dx-tabs" data-dx-tabs style="margin-top: 14px;">
+  <div class="dx-tablist" role="tablist" aria-label="OBS sections">
+    <button class="dx-tab" type="button" role="tab" aria-selected="true" data-dx-tab="advanced-zoom">Advanced Zoom</button>
+    <button class="dx-tab" type="button" role="tab" aria-selected="false" data-dx-tab="moving-cam">Moving Cam</button>
+    <button class="dx-tab" type="button" role="tab" aria-selected="false" data-dx-tab="overlays-widgets">Overlays &amp; widgets</button>
+    <button class="dx-tab" type="button" role="tab" aria-selected="false" data-dx-tab="scripts">OBS Scripts</button>
+    <button class="dx-tab" type="button" role="tab" aria-selected="false" data-dx-tab="plugins">OBS Plugins</button>
+  </div>
+
+  <section class="dx-tabpanel" data-dx-panel="advanced-zoom">
+    <div class="dx-card">
+      <h2 style="margin-top:0;">Advanced Zoom</h2>
+      <p>Tutorial + resources for setting up Advanced Zoom and how it works.</p>
+
+      <h3>Required plugins</h3>
+      <ul style="margin:0; padding-left: 18px; color: rgba(245, 247, 255, 0.75); line-height: 1.8;">
+        <li><a class="dx-link" href="https://obsproject.com/forum/resources/move.913/" target="_blank">Move Transition (Exceldro)</a></li>
+        <li><a class="dx-link" href="https://github.com/FiniteSingularity/obs-advanced-masks" target="_blank">OBS Advanced Masks (FiniteSingularity)</a></li>
+      </ul>
+
+      <!-- Dex: Add download link/button here when your scene pack is ready. -->
+    </div>
+  </section>
+
+  <section class="dx-tabpanel" data-dx-panel="moving-cam" hidden>
+    <div class="dx-card">
+      <h2 style="margin-top:0;">Moving Cam</h2>
+      <p>Tutorial for setting up a moving camera across positions you need.</p>
+
+      <h3>Required plugins</h3>
+      <ul style="margin:0; padding-left: 18px; color: rgba(245, 247, 255, 0.75); line-height: 1.8;">
+        <li><a class="dx-link" href="https://obsproject.com/forum/resources/move.913/" target="_blank">Move Transition (Exceldro)</a></li>
+        <li><a class="dx-link" href="https://github.com/FiniteSingularity/obs-advanced-masks" target="_blank">OBS Advanced Masks (FiniteSingularity)</a></li>
+      </ul>
+
+      <!-- Dex: Add download link/button here when your scene pack is ready. -->
+    </div>
+  </section>
+
+  <section class="dx-tabpanel" data-dx-panel="overlays-widgets" hidden>
+    <div class="dx-card">
+      <h2 style="margin-top:0;">Overlays</h2>
+      <p class="dx-muted" style="margin-bottom: 12px;">OBS browser sources: copy the overlay URL and add it in OBS as a browser source.</p>
+      <div data-dx-overlays></div>
+    </div>
+    <div class="dx-card" style="margin-top: 14px;">
+      <h2 style="margin-top:0;">OBS widgets</h2>
+      <p class="dx-muted" style="margin-bottom: 12px;">Browser-source widgets you can drop into OBS. Copy URL or download and tweak locally.</p>
+      <div data-dx-widgets></div>
+    </div>
+  </section>
+
+  <section class="dx-tabpanel" data-dx-panel="scripts" hidden>
+    <div class="dx-card">
+      <h2 style="margin-top:0;">OBS Scripts</h2>
+      <p>A list of scripts I use or recommend, with short notes.</p>
+
+      <ul style="margin:0; padding-left: 18px; color: rgba(245, 247, 255, 0.75); line-height: 1.8;">
+        <li><strong>Horaiken3DPanel</strong> — scene/control helper panel.</li>
+        <li><strong>Countdown.lua</strong> — simple countdown timer.</li>
+        <li><strong>Media_Hide</strong> — hide/restore media sources.</li>
+        <li><strong>obs-zoom-to-mouse.lua</strong> — zoom around cursor.</li>
+        <li><strong>Source Search Helper</strong> — quickly find sources.</li>
+        <li><strong>source-toggler</strong> — toggle sources with hotkeys/logic.</li>
+        <li><strong>whiteboard.lua</strong> — draw/annotate on stream.</li>
+      </ul>
+
+      <!-- Dex: Add links per script when ready. -->
+    </div>
+  </section>
+
+  <section class="dx-tabpanel" data-dx-panel="plugins" hidden>
+    <div class="dx-card">
+      <h2 style="margin-top:0;">OBS Plugins</h2>
+      <p>A list of plugins I use (or think are worth checking out).</p>
+
+      <ul style="margin:0; padding-left: 18px; color: rgba(245, 247, 255, 0.75); line-height: 1.8;">
+        <li><strong>Advanced Scene Switcher</strong> — automation based on conditions.</li>
+        <li><strong>Transition Table</strong> — smarter transition routing.</li>
+        <!-- Dex: Add more here (Exceldro / StreamUP / Aitum Suite, etc.) -->
+      </ul>
+    </div>
+  </section>
+</section>
+

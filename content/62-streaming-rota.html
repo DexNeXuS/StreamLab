@@ -1,0 +1,48 @@
+<!--dex
+title: Streaming Rota
+group: Streaming
+order: 20
+description: When I'm next streaming — weekly schedule and times.
+tags: twitch, schedule, rota, streaming
+slug: streaming-rota
+-->
+
+<section class="dx-card">
+  <div class="dx-page-hero-wrap">
+    <img src="assets/images/page-images/streaming-rota.png" alt="" class="dx-page-card-img" loading="lazy" />
+  </div>
+  <div class="dx-badge dx-badge--purple">Twitch • Schedule</div>
+  <h1 style="margin-top:10px;">Streaming Rota</h1>
+  <p>
+    Current time and when I'm next streaming. You'll see the next scheduled stream and this week's plan at a glance. Times and days update from my schedule — drop in and see what's coming up.
+  </p>
+</section>
+
+<section class="dx-card" style="margin-top:14px;">
+  <h2 style="margin-top:0;">Current date & time</h2>
+  <p class="dx-rota-datetime dx-muted" data-dx-rota-datetime aria-live="polite">—</p>
+</section>
+
+<section class="dx-card" style="margin-top:14px;">
+  <h2 style="margin-top:0;">Next stream</h2>
+  <div data-dx-streaming-rota aria-live="polite">
+    <p class="dx-muted">Loading schedule…</p>
+  </div>
+</section>
+
+<section class="dx-card" style="margin-top:14px;">
+  <h2 style="margin-top:0;">This week</h2>
+  <p class="dx-muted" style="margin-bottom:10px;">Next 7 days. Stream times from rota.</p>
+  <div data-dx-rota-week aria-live="polite">
+    <p class="dx-muted">Loading…</p>
+  </div>
+</section>
+
+<section class="dx-card" style="margin-top:14px;">
+  <h2 style="margin-top:0;">Quick links</h2>
+  <div style="display:flex; gap:10px; flex-wrap:wrap;">
+    <a class="dx-btn" href="?page=twitch">Back to Twitch</a>
+    <a class="dx-btn" href="?page=commands">Commands</a>
+    <a class="dx-btn" href="?page=inventory">DexNeXuS Inventory</a>
+  </div>
+</section>

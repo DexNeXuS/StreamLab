@@ -1,0 +1,52 @@
+<!--dex
+title: King-Queen overlay
+group: Resources
+order: 20
+description: King & Queen overlay for OBS with Streamer.bot WebSocket ping.
+tags: king-queen, overlay, streamerbot, obs
+og_image: assets/images/page-images/king-queen.png
+-->
+
+<section class="dx-card">
+  <div class="dx-page-hero-wrap">
+    <img src="assets/images/page-images/king-queen.png" alt="King-Queen overlay preview" class="dx-page-card-img" loading="lazy" />
+  </div>
+  <div class="dx-badge dx-badge--purple">Overlay + Streamer.bot</div>
+  <h1 style="margin-top: 10px;">King-Queen overlay</h1>
+  <p>
+    <strong>What it is:</strong> A two-panel “King” and “Queen” overlay for OBS that listens for WebSocket messages from Streamer.bot. Use it for polls, duels, or any two-option display. You add the overlay as a Browser Source in OBS, then use the Streamer.bot action below to send pings (or other commands) to control it.
+  </p>
+</section>
+
+<section class="dx-card" style="margin-top: 14px;">
+  <h2 style="margin-top:0;">Overlay URL (OBS Browser Source)</h2>
+  <p class="dx-muted">In OBS, add a <strong>Browser Source</strong> and set the URL to the address below. This is the same URL shown in the Overlays list on the <a class="dx-link" href="?page=obs">OBS page</a> — you can use either place to copy it.</p>
+  <div data-dx-overlay-url="king-queen/index.html"></div>
+</section>
+
+<section class="dx-card" style="margin-top: 14px;">
+  <h2 style="margin-top:0;">Streamer.bot action import</h2>
+  <p class="dx-muted">The action sends a WebSocket message to the overlay (e.g. to trigger or test the display). Use the box below to <strong>Copy</strong>, <strong>Download</strong>, or <strong>Open</strong> the import file, then in Streamer.bot go to <strong>Import → Import from clipboard</strong>.</p>
+  <div data-dx-import-box="streamerbot/action-imports/king-queen.txt"></div>
+</section>
+
+<details class="dx-accordion dx-card" style="margin-top: 14px;">
+  <summary>How to set up</summary>
+  <div class="dx-accordion-body">
+    <p class="dx-muted">Add a Browser Source in OBS with the overlay URL above. In Streamer.bot, import the action and trigger it (e.g. from a command or button) to send the WebSocket message that controls the overlay. Adjust these steps to match your workflow.</p>
+  </div>
+</details>
+
+<details class="dx-accordion dx-card" style="margin-top: 14px;">
+  <summary>Configuration</summary>
+  <div class="dx-accordion-body">
+    <p class="dx-muted" style="margin-bottom: 14px;">URL params and config file options. Expand to load the full guide.</p>
+    <div data-dx-doc="obs/overlays/king-queen/HOWTO.md"></div>
+  </div>
+</details>
+
+<section class="dx-card" style="margin-top: 14px;">
+  <h2 style="margin-top:0;">Files</h2>
+  <p class="dx-muted">Overlay files (HTML, CSS, JS, config) live in <code>obs/overlays/king-queen/</code>. If you host this site, copy the King-Queen project files into that folder so the overlay URL above serves the correct content.</p>
+  <p class="dx-muted" style="margin-top: 12px;"><strong>Version history:</strong> <a class="dx-link" href="versions-and-changes/CHANGES_king-queen.txt" target="_blank" rel="noopener noreferrer">Changelog</a> · <a class="dx-link" href="versions-and-changes/VERSION_king-queen.txt" target="_blank" rel="noopener noreferrer">Version</a></p>
+</section>

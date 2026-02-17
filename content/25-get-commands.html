@@ -1,0 +1,78 @@
+<!--dex
+title: Get Commands
+group: Resources
+order: 25
+description: Auto-export and post Streamer.bot commands to chat via JSON; custom descriptions, prefix, mod-only.
+tags: get commands, streamerbot, touch portal, commands, json
+-->
+
+<section class="dx-card">
+  <div class="dx-page-hero-wrap">
+    <img src="assets/images/page-images/get-commands.png" alt="" class="dx-page-card-img" loading="lazy" />
+  </div>
+  <div class="dx-badge dx-badge--green">Streamer.bot</div>
+  <h1 style="margin-top: 10px;">Get Commands</h1>
+  <p>
+    <strong>What it is:</strong> Two Streamer.bot actions that work together: (1) <strong>Make JSON</strong> exports your commands into a JSON file with optional descriptions and permissions per command. (2) <strong>Run</strong> reads that JSON and posts a formatted command list to chat. You can set a custom icon/prefix and title per group, show or hide descriptions, and filter by permissions (e.g. show only mod commands). Great for “!commands” style messages and for Touch Portal buttons that type or post command lists.
+  </p>
+</section>
+
+<section class="dx-card" style="margin-top: 14px;">
+  <h2 style="margin-top:0;">How to set up</h2>
+  <p class="dx-muted">Run the “Make JSON” action once to export your commands to <code>commands.json</code>. Set the “Run” action’s <code>jsonPath</code> and <code>cmd</code> (group name). Trigger “Run” from a chat command, Touch Portal, or channel point reward. Add a screenshot as <code>assets/images/page-images/get-commands-setup.png</code> if you want.</p>
+</section>
+
+<section class="dx-card" style="margin-top: 14px;">
+  <h2 style="margin-top:0;">JSON format (from Make JSON)</h2>
+  <p class="dx-muted">The export produces a file like <code>commands.json</code> with:</p>
+  <ul style="margin: 0; padding-left: 18px; color: var(--dx-text-2); line-height: 1.8;">
+    <li><strong>groups</strong> — One key per Streamer.bot command group.</li>
+    <li>Each group has <strong>icon</strong> (emote/prefix), <strong>title</strong> (custom name; if empty, group name + “Commands” is used), and <strong>commands</strong>.</li>
+    <li><strong>commands</strong> — For each command (by primary trigger): <strong>description</strong> (optional), <strong>permissions</strong> (e.g. <code>""</code> for everyone, <code>"Mod"</code> / <code>"Sub"</code> / <code>"VIP"</code> for restricted).</li>
+  </ul>
+  <p class="dx-muted" style="margin-top: 10px;">Run the “Make JSON” action whenever you add/remove commands; edit the JSON to add descriptions or permissions. The “Run” action uses this file to build the chat message.</p>
+</section>
+
+<section class="dx-card" style="margin-top: 14px;">
+  <h2 style="margin-top:0;">Run action arguments</h2>
+  <ul style="margin: 0; padding-left: 18px; color: var(--dx-text-2); line-height: 1.8;">
+    <li><strong>cmd</strong> — Command group name (required).</li>
+    <li><strong>jsonPath</strong> — Full path to the folder or file containing <code>commands.json</code> (required).</li>
+    <li><strong>desc</strong> — <code>true</code> to include descriptions in the chat output.</li>
+    <li><strong>sd</strong> — <code>true</code> to include disabled commands.</li>
+    <li><strong>alias</strong> — <code>true</code> to show aliases.</li>
+    <li><strong>permissions</strong> — If set (e.g. <code>Mod</code>), only commands with that permissions value in the JSON are shown (for mod-only lists).</li>
+  </ul>
+</section>
+
+<section class="dx-card" style="margin-top: 14px;">
+  <h2 style="margin-top:0;">Action import</h2>
+  <p class="dx-muted">One import contains the Get Commands plugin (Make JSON + Run). Use the box below to <strong>Copy</strong>, <strong>Download</strong>, or <strong>Open</strong> the import file — or use the list on the <a class="dx-link" href="?page=streamerbot">Streamer.bot</a> page (Action imports tab). Then in Streamer.bot: <strong>Import → Import from clipboard</strong>.</p>
+  <div data-dx-import-box="streamerbot/action-imports/get-commands-run.txt"></div>
+</section>
+
+<section class="dx-card" style="margin-top: 14px;">
+  <h2 style="margin-top:0;">Reference scripts</h2>
+  <p class="dx-muted">Download the C# scripts (for reference or customisation):</p>
+  <ul style="margin: 0; padding-left: 18px; color: var(--dx-text-2); line-height: 1.8;">
+    <li><a class="dx-link" href="streamerbot/scripts/get-commands/make-JSON.cs" download target="_blank" rel="noopener noreferrer">make-JSON.cs</a> — export commands to JSON</li>
+    <li><a class="dx-link" href="streamerbot/scripts/get-commands/Run.cs" download target="_blank" rel="noopener noreferrer">Run.cs</a> — read JSON and post to chat</li>
+  </ul>
+</section>
+
+<details class="dx-accordion dx-card" style="margin-top: 14px;">
+  <summary>Example: how to call this (e.g. Touch Portal)</summary>
+  <div class="dx-accordion-body">
+  <p class="dx-muted">Below you can add a screenshot, a short description, and a download link for a Touch Portal button so visitors see exactly how to trigger Get Commands.</p>
+  <p><strong>Where to put assets:</strong> Use <code>assets/images/&lt;slug&gt;/</code> for screenshots (see <code>assets/images/README.md</code>). Touch Portal button files go in <code>touch-portal/buttons/</code>. Example filenames:</p>
+  <ul style="margin: 0; padding-left: 18px; color: var(--dx-text-2); line-height: 1.8;">
+    <li><strong>Image (screenshot):</strong> <code>assets/images/page-images/get-commands-touch-portal-example.png</code></li>
+    <li><strong>Touch Portal button download:</strong> <code>touch-portal/buttons/get-commands-touch-portal-button.tpb</code></li>
+  </ul>
+  <p style="margin-top: 14px;"><strong>Example description (placeholder):</strong> Add a Touch Portal button that runs the Streamer.bot action “Get Commands (Run)” with arguments: <code>cmd</code> = your group name, <code>jsonPath</code> = path to the folder containing <code>commands.json</code>, <code>desc</code> = true if you want descriptions in chat. Optionally set <code>permissions</code> to e.g. <code>Mod</code> to show only mod-only commands.</p>
+  <div class="dx-card" style="margin-top: 14px; padding: 16px; background: var(--dx-surface); border-radius: var(--dx-radius-sm);">
+    <p class="dx-muted" style="margin: 0;">Add <code>assets/images/page-images/get-commands-touch-portal-example.png</code> and use <code>&lt;img src="assets/images/page-images/get-commands-touch-portal-example.png" alt="…"&gt;</code>.</p>
+    <p class="dx-muted" style="margin-top: 10px;">Add your Touch Portal button file as <code>touch-portal/buttons/get-commands-touch-portal-button.tpb</code>, then link it: <a class="dx-link" href="touch-portal/buttons/get-commands-touch-portal-button.tpb" download>Download Touch Portal button</a>.</p>
+  </div>
+  </div>
+</details>

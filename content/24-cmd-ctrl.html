@@ -1,0 +1,56 @@
+<!--dex
+title: CMD CTRL
+group: Resources
+order: 24
+description: Turn Streamer.bot commands, rewards, timers, or actions on/off (great with Touch Portal).
+tags: cmd ctrl, streamerbot, touch portal, toggle
+-->
+
+<section class="dx-card">
+  <div class="dx-page-hero-wrap">
+    <img src="assets/images/page-images/cmd-ctrl.png" alt="" class="dx-page-card-img" loading="lazy" />
+  </div>
+  <div class="dx-badge dx-badge--green">Streamer.bot</div>
+  <h1 style="margin-top: 10px;">CMD CTRL</h1>
+  <p>
+    <strong>What it is:</strong> A Streamer.bot action that turns things on or off by name or ID: <strong>rewards</strong>, <strong>commands</strong>, <strong>command groups</strong>, <strong>timers</strong>, or <strong>actions</strong>. Pass the type, the id/name (or several separated by <code>||</code>), and <code>enabled</code> true/false. Ideal for Touch Portal (or other triggers) to enable/disable whole groups or single commands without opening Streamer.bot.
+  </p>
+</section>
+
+<section class="dx-card" style="margin-top: 14px;">
+  <h2 style="margin-top:0;">Action arguments</h2>
+  <ul style="margin: 0; padding-left: 18px; color: var(--dx-text-2); line-height: 1.8;">
+    <li><strong>id</strong> — Command/reward/timer/action ID (GUID) or name. Multiple items: separate with <code>||</code> (e.g. <code>MyCommand||OtherCommand</code>).</li>
+    <li><strong>type</strong> — One of: <code>reward</code> / <code>rewards</code>, <code>command</code> / <code>cmd</code>, <code>commandgroup</code> / <code>group</code>, <code>timer</code> / <code>timers</code>, <code>action</code> / <code>actions</code>.</li>
+    <li><strong>enabled</strong> — <code>true</code> to enable, <code>false</code> to disable.</li>
+  </ul>
+  <p class="dx-muted" style="margin-top: 10px;">Example (Touch Portal): call this action with <code>type=command</code>, <code>id=!heal</code>, <code>enabled=false</code> to turn off the <code>!heal</code> command.</p>
+</section>
+
+<details class="dx-accordion dx-card" style="margin-top: 14px;">
+  <summary>How to set up</summary>
+  <div class="dx-accordion-body">
+    <p class="dx-muted">Import the action (Copy / Download / Open below), then from Touch Portal (or another trigger) call it with <code>type</code>, <code>id</code>, and <code>enabled</code>. E.g. disable a command by name, or toggle a command group. Add <code>assets/images/page-images/cmd-ctrl-setup.png</code> for a screenshot.</p>
+  </div>
+</details>
+
+<details class="dx-accordion dx-card" style="margin-top: 14px;">
+  <summary>Examples</summary>
+  <div class="dx-accordion-body">
+    <p class="dx-muted">Turn off <code>!heal</code> during a segment, or enable/disable a whole group of commands. Add <code>assets/images/page-images/cmd-ctrl-example.png</code> to show your Touch Portal layout or Streamer.bot bind.</p>
+  </div>
+</details>
+
+<section class="dx-card" style="margin-top: 14px;">
+  <h2 style="margin-top:0;">Action import</h2>
+  <p class="dx-muted">Use the box below to copy the import string, download the .txt file, or open it. Then in Streamer.bot: <strong>Import → Import from clipboard</strong>.</p>
+  <div data-dx-import-box="streamerbot/action-imports/cmd-ctrl.txt"></div>
+</section>
+
+<section class="dx-card" style="margin-top: 14px;">
+  <h2 style="margin-top:0;">Reference script</h2>
+  <p class="dx-muted">Download the C# script (for reference or customisation):</p>
+  <ul style="margin: 0; padding-left: 18px; color: var(--dx-text-2); line-height: 1.8;">
+    <li><a class="dx-link" href="streamerbot/scripts/cmd-ctrl/Run.cs" download target="_blank" rel="noopener noreferrer">Run.cs</a></li>
+  </ul>
+</section>

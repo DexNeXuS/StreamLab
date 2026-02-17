@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stream King & Queen Overlay</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Load configuration file FIRST (before other scripts that use CONFIG) -->
+    <!-- Edit config.js for defaults; or override via URL: ?ws_url=...&timer_duration=30 etc. -->
+    <script src="config.js"></script>
+    <script src="params-override.js"></script>
+</head>
+
+<body>
+
+<div id="container">
+  <!-- KING - Upper Left -->
+  <div class="king-panel panel" id="kingPanel">
+    <img class="king-crown" id="kingCrown" src="KingS.png" alt="King Crown">
+    <div class="king-avatar-wrap" id="kingGlow">
+      <img class="king-avatar" id="kingAvatar">
+    </div>
+    <div class="king-name" id="kingName"></div>
+    <div class="timer-display hidden" id="kingTimer"></div>
+  </div>
+
+  <!-- QUEEN - Upper Right -->
+  <div class="queen-panel panel" id="queenPanel">
+    <img class="queen-tiara" id="queenCrown" src="QueenS.png" alt="Queen Tiara">
+    <div class="queen-avatar-wrap" id="queenGlow">
+      <img class="queen-avatar" id="queenAvatar">
+    </div>
+    <div class="queen-name" id="queenName"></div>
+    <div class="timer-display hidden" id="queenTimer"></div>
+  </div>
+</div>
+
+<!-- Debug DOM Elements (hidden by default if DEBUG_ENABLED is false) -->
+<div id="statusContainer" style="display: none;">DISCONNECTED</div>
+<div id="messageLog"></div>
+
+    <script src="../../../tools/streamerbot-websocket.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

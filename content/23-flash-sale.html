@@ -1,0 +1,58 @@
+<!--dex
+title: Flash Sale
+group: Resources
+order: 23
+description: Turn any Streamer.bot channel point reward into a timed flash sale.
+tags: flash sale, streamerbot, twitch, channel points
+-->
+
+<section class="dx-card">
+  <div class="dx-page-hero-wrap">
+    <img src="assets/images/page-images/flash-sale.png" alt="" class="dx-page-card-img" loading="lazy" />
+  </div>
+  <div class="dx-badge dx-badge--green">Streamer.bot</div>
+  <h1 style="margin-top: 10px;">Flash Sale</h1>
+  <p>
+    <strong>What it is:</strong> A Streamer.bot action that turns any channel point reward into a flash sale: when triggered, it temporarily lowers the cost of that reward (or multiple rewards) by a percentage, then restores the original prices after a set time. Great for "flash sale" redemptions on Twitch.
+  </p>
+</section>
+
+<section class="dx-card" style="margin-top: 14px;">
+  <h2 style="margin-top:0;">Action arguments (variables)</h2>
+  <p class="dx-muted">When you trigger the action (e.g. from a channel point reward or Touch Portal), pass these so the action knows how to run the sale:</p>
+  <ul style="margin: 0; padding-left: 18px; color: var(--dx-text-2); line-height: 1.8;">
+    <li><strong>percentOff</strong> — Discount percentage (e.g. <code>50</code> for 50% off). Default <code>99</code> if not set.</li>
+    <li><strong>saleTimer</strong> — How long the sale lasts, in seconds (e.g. <code>60</code>). Default <code>30</code>.</li>
+    <li><strong>cpPrice</strong> — If set, use this as the fixed channel point price during the sale instead of a percentage off.</li>
+    <li><strong>fairPrice</strong> — Minimum/fair price in channel points when using percentage off. Default <code>500</code>.</li>
+  </ul>
+  <p class="dx-muted" style="margin-top: 10px;">The action stores original prices, applies the sale, starts a timer, and when the timer fires it restores all rewards to their original costs.</p>
+</section>
+
+<details class="dx-accordion dx-card" style="margin-top: 14px;">
+  <summary>How to set up</summary>
+  <div class="dx-accordion-body">
+    <p class="dx-muted">Create a channel point reward in Twitch, then in Streamer.bot link that reward to this action. Set the action arguments (percentOff, saleTimer, etc.) when you trigger it — e.g. from the reward or from Touch Portal. Add a setup screenshot as <code>assets/images/page-images/flash-sale-setup.png</code> if you want.</p>
+  </div>
+</details>
+
+<details class="dx-accordion dx-card" style="margin-top: 14px;">
+  <summary>Examples</summary>
+  <div class="dx-accordion-body">
+    <p class="dx-muted">E.g. "50% off for 60 seconds" or "99 points for 30 seconds". Add <code>assets/images/page-images/flash-sale-example.png</code> to show the reward or chat in action.</p>
+  </div>
+</details>
+
+<section class="dx-card" style="margin-top: 14px;">
+  <h2 style="margin-top:0;">Action import</h2>
+  <p class="dx-muted">Use the box below to <strong>Copy</strong>, <strong>Download</strong>, or <strong>Open</strong> the import file. Then in Streamer.bot: <strong>Import → Import from clipboard</strong>.</p>
+  <div data-dx-import-box="streamerbot/action-imports/flash-sale.txt"></div>
+</section>
+
+<section class="dx-card" style="margin-top: 14px;">
+  <h2 style="margin-top:0;">Reference script</h2>
+  <p class="dx-muted">Download the C# script (for reference or customisation):</p>
+  <ul style="margin: 0; padding-left: 18px; color: var(--dx-text-2); line-height: 1.8;">
+    <li><a class="dx-link" href="streamerbot/scripts/flash-sale/Run.cs" download target="_blank" rel="noopener noreferrer">Run.cs</a></li>
+  </ul>
+</section>

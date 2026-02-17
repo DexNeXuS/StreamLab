@@ -1,0 +1,123 @@
+<!--dex
+title: DexNeXuS Inventory
+group: Streaming
+order: 30
+description: Items, crafting, materials, loot tables, and recipes.
+tags: twitch, inventory, items, nexi
+nav: false
+-->
+
+<section class="dx-card">
+  <div class="dx-page-hero-wrap">
+    <img data-dx-image="inventory.png" alt="" class="dx-page-card-img" loading="lazy" />
+  </div>
+  <div class="dx-badge dx-badge--purple">Twitch • Inventory</div>
+  <h1 style="margin-top:10px;">DexNeXuS Inventory</h1>
+  <p>
+    A catalog of the items in my Twitch inventory system — things viewers can earn, buy, or use on stream. Includes standalone items, craftables, materials, loot tables, and recipes. Everything is valued in Nexi.
+  </p>
+</section>
+
+<section class="dx-tabs" data-dx-tabs>
+  <div class="dx-tablist" role="tablist" aria-label="Inventory sections">
+    <button class="dx-tab" type="button" role="tab" aria-selected="true" data-dx-tab="standalone">Standalone Items</button>
+    <button class="dx-tab" type="button" role="tab" aria-selected="false" data-dx-tab="craftable">Craftable Items</button>
+    <button class="dx-tab" type="button" role="tab" aria-selected="false" data-dx-tab="materials">Materials</button>
+    <button class="dx-tab" type="button" role="tab" aria-selected="false" data-dx-tab="loot">Loot Tables</button>
+    <button class="dx-tab" type="button" role="tab" aria-selected="false" data-dx-tab="recipes">Recipes</button>
+  </div>
+
+  <section class="dx-tabpanel" data-dx-panel="standalone">
+    <div class="dx-grid">
+      <div class="dx-card dx-col-12">
+        <h2 style="margin-top:0;">Standalone Items</h2>
+        <p class="dx-muted">Purchased or used directly (no crafting required).</p>
+      </div>
+      <div class="dx-card dx-col-12" style="margin-top:0;">
+        <div data-dx-inventory data-category="standalone" class="dx-inventory-cards" role="list"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dx-tabpanel" data-dx-panel="craftable" hidden>
+    <div class="dx-grid">
+      <div class="dx-card dx-col-12">
+        <h2 style="margin-top:0;">Craftable Items</h2>
+        <p class="dx-muted">Created via recipes (uses materials + other items).</p>
+      </div>
+      <div class="dx-card dx-col-12" style="margin-top:0;">
+        <div data-dx-inventory data-category="craftable" class="dx-inventory-cards" role="list"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dx-tabpanel" data-dx-panel="materials" hidden>
+    <div class="dx-grid">
+      <div class="dx-card dx-col-12">
+        <h2 style="margin-top:0;">Crafting Materials</h2>
+        <p class="dx-muted">Materials are mostly obtained via loot tables/trading.</p>
+      </div>
+      <div class="dx-card dx-col-12" style="margin-top:0;">
+        <div data-dx-inventory data-category="materials" class="dx-inventory-cards" role="list"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dx-tabpanel" data-dx-panel="loot" hidden>
+    <div class="dx-card">
+      <h2 style="margin-top:0;">Loot Tables</h2>
+      <p class="dx-muted">Drop chances for different rarity pools.</p>
+    </div>
+
+    <div class="dx-grid" style="margin-top:12px;">
+      <div class="dx-card dx-col-6">
+        <h3 style="margin-top:0;">Common Loot (60% drop rate)</h3>
+        <ul style="margin:0; padding-left: 18px; color: rgba(245, 247, 255, 0.75); line-height: 1.8;">
+          <li>Echo Stone — 60%</li>
+          <li>Bone Fragment — 30%</li>
+          <li>Shadow Weave — 10%</li>
+        </ul>
+      </div>
+      <div class="dx-card dx-col-6">
+        <h3 style="margin-top:0;">Uncommon Loot (25% drop rate)</h3>
+        <ul style="margin:0; padding-left: 18px; color: rgba(245, 247, 255, 0.75); line-height: 1.8;">
+          <li>Cursed Essence — 50%</li>
+          <li>Hex Coin — 30%</li>
+          <li>Soul Anchor — 15%</li>
+          <li>Blood Moon Token — 5%</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="dx-tabpanel" data-dx-panel="recipes" hidden>
+    <div class="dx-card">
+      <h2 style="margin-top:0;">Crafting Recipes</h2>
+      <p class="dx-muted">A quick view of required ingredients for crafted items.</p>
+    </div>
+
+    <div class="dx-grid" style="margin-top:12px;">
+      <div class="dx-card dx-col-6">
+        <h3 style="margin-top:0;">Phantom's Veil</h3>
+        <p class="dx-muted">2x Shadow Weave • 3x Bone Fragment</p>
+      </div>
+      <div class="dx-card dx-col-6">
+        <h3 style="margin-top:0;">Chaos Orb</h3>
+        <p class="dx-muted">2x Cursed Essence • 2x Echo Stone • 1x Void Shard</p>
+      </div>
+      <div class="dx-card dx-col-6">
+        <h3 style="margin-top:0;">Death's Whisper</h3>
+        <p class="dx-muted">Silence Curse • Soul Thief • Necrotic Catalyst</p>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="dx-card" style="margin-top:14px;">
+  <h2 style="margin-top:0;">Quick links</h2>
+  <div style="display:flex; gap:10px; flex-wrap:wrap;">
+    <a class="dx-btn" href="?page=twitch">Back to Twitch</a>
+    <a class="dx-btn" href="?page=streaming-rota">Streaming Rota</a>
+    <a class="dx-btn" href="?page=commands">Commands</a>
+  </div>
+</section>

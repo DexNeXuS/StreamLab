@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <title>Rocksmith Widget</title>
+
+    <link rel="stylesheet" href="./styles.css" />
+
+    <!-- Streamer.bot client -->
+    <script src="https://unpkg.com/@streamerbot/client/dist/streamerbot-client.js"></script>
+
+    <!-- Config must load before scripts that use it -->
+    <script src="./config.js"></script>
+
+    <!-- Deps (reusing your existing addons deps) -->
+    <script src="../../addons/_deps/jquery-3.2.1.js"></script>
+    <script src="../../addons/_deps/sniffer-poller.js"></script>
+
+    <!-- Streamer.bot WebSocket (shared with king-queen and other overlays) -->
+    <script src="../../../tools/streamerbot-websocket.js"></script>
+  </head>
+
+  <body>
+    <!-- Global canvas HUD: connection status pills (NOT inside widget) -->
+    <div class="statusHud" id="statusHud" aria-hidden="true">
+      <div class="statusPills" id="statusPills">
+        <div class="pill" id="rsPill">
+          <span class="dot" id="rsDot" aria-hidden="true"></span>
+          <span class="pillText" id="rsText">Waiting for RockSniffer</span>
+        </div>
+        <div class="pill ghost" id="wsPill">
+          <span class="dot" id="wsDot" aria-hidden="true"></span>
+          <span class="pillText" id="wsText">Streamer.bot</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="widget" class="widget">
+      <div class="glass">
+        <div class="coverBlur" id="coverBlur" aria-hidden="true"></div>
+        <div class="coverTint" aria-hidden="true"></div>
+
+        <div class="chrome">
+          <div class="left">
+            <div class="avatar">
+              <img id="playerImage" alt="" />
+            </div>
+            <div class="brand">
+              <div class="brandTitle">ROCKSMITH</div>
+              <div class="brandSub" id="brandSub">Live overlay</div>
+            </div>
+          </div>
+
+          <div class="status" id="status">
+            <!-- Shown when everything is connected -->
+            <div class="signal hidden" id="signal" aria-hidden="true">
+              <div class="signalBars">
+                <span class="b"></span><span class="b"></span><span class="b"></span><span class="b"></span>
+              </div>
+              <div class="signalText" id="signalText">LIVE</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="cardStack" class="cardStack" aria-live="polite">
+          <!-- Cards are static markup for OBS safety; values are filled by script.js -->
+
+          <section class="card active" data-card="now">
+            <div class="cardTop">
+              <div class="cardTitle">Now playing</div>
+              <div class="cardHint" id="nowHint">Song</div>
+            </div>
+            <div class="nowTitle" id="nowTitle">—</div>
+            <div class="nowSub" id="nowSub">—</div>
+            <div class="meter">
+              <div class="meterBar" id="nowMeter" style="width: 0%"></div>
+            </div>
+            <div class="row">
+              <div class="kv">
+                <div class="k">Timer</div>
+                <div class="v" id="nowTimer">00:00</div>
+              </div>
+              <div class="kv">
+                <div class="k">Length</div>
+                <div class="v" id="nowLength">00:00</div>
+              </div>
+              <div class="kv">
+                <div class="k">Tuning</div>
+                <div class="v" id="nowTuning">—</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="card" data-card="performance">
+            <div class="cardTop">
+              <div class="cardTitle">Performance</div>
+              <div class="cardHint" id="perfHint">Score + notes</div>
+            </div>
+            <div class="bigSplit">
+              <div class="big">
+                <div class="bigK">Score</div>
+                <div class="bigV" id="perfScore">—</div>
+              </div>
+              <div class="big">
+                <div class="bigK">Accuracy</div>
+                <div class="bigV" id="perfAccuracy">—</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="kv">
+                <div class="k">Notes</div>
+                <div class="v" id="perfNotes">—</div>
+              </div>
+              <div class="kv">
+                <div class="k">Missed</div>
+                <div class="v" id="perfMissed">—</div>
+              </div>
+              <div class="kv">
+                <div class="k">Arrangement</div>
+                <div class="v" id="perfArrangement">—</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="card" data-card="streak">
+            <div class="cardTop">
+              <div class="cardTitle">Streak</div>
+              <div class="cardHint" id="streakHint">Consistency</div>
+            </div>
+            <div class="bigSplit">
+              <div class="big">
+                <div class="bigK">Streak</div>
+                <div class="bigV" id="streakCurrent">—</div>
+              </div>
+              <div class="big">
+                <div class="bigK">Best</div>
+                <div class="bigV" id="streakBest">—</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="kv">
+                <div class="k">Multiplier</div>
+                <div class="v" id="streakMult">—</div>
+              </div>
+              <div class="kv">
+                <div class="k">Best mult</div>
+                <div class="v" id="streakMultBest">—</div>
+              </div>
+              <div class="kv">
+                <div class="k">Miss streak</div>
+                <div class="v" id="streakMiss">—</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="card" data-card="accuracy">
+            <div class="cardTop">
+              <div class="cardTitle">Accuracy</div>
+              <div class="cardHint" id="accHint">Hit rate</div>
+            </div>
+            <div class="spark">
+              <div class="sparkFill" id="accSpark" style="width: 0%"></div>
+            </div>
+            <div class="bigSplit">
+              <div class="big">
+                <div class="bigK">Now</div>
+                <div class="bigV" id="accNow">—</div>
+              </div>
+              <div class="big">
+                <div class="bigK">Since launch</div>
+                <div class="bigV" id="accSinceLaunch">—</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="kv">
+                <div class="k">Lifetime</div>
+                <div class="v" id="accLifetime">—</div>
+              </div>
+              <div class="kv">
+                <div class="k">Total notes</div>
+                <div class="v" id="accTotalNotes">—</div>
+              </div>
+              <div class="kv">
+                <div class="k">Hit</div>
+                <div class="v" id="accHitNotes">—</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="card" data-card="session">
+            <div class="cardTop">
+              <div class="cardTitle">Session</div>
+              <div class="cardHint" id="sessHint">What to watch</div>
+            </div>
+            <div class="sessionMain" id="sessMain">—</div>
+            <div class="sessionSub" id="sessSub">Send updates from Streamer.bot</div>
+            <div class="row">
+              <div class="kv">
+                <div class="k">Goal</div>
+                <div class="v" id="sessGoal">—</div>
+              </div>
+              <div class="kv">
+                <div class="k">Focus</div>
+                <div class="v" id="sessFocus">—</div>
+              </div>
+              <div class="kv">
+                <div class="k">Mode</div>
+                <div class="v" id="sessMode">—</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="card" data-card="custom">
+            <div class="cardTop">
+              <div class="cardTitle">Custom</div>
+              <div class="cardHint" id="customHint">Streamer.bot driven</div>
+            </div>
+            <div class="customLines">
+              <div class="customLine">
+                <div class="k">Label</div>
+                <div class="v" id="customLabel">—</div>
+              </div>
+              <div class="customLine">
+                <div class="k">Value</div>
+                <div class="v" id="customValue">—</div>
+              </div>
+              <div class="customLine">
+                <div class="k">Extra</div>
+                <div class="v" id="customExtra">—</div>
+              </div>
+            </div>
+            <div class="footerHint" id="customFooterHint"></div>
+          </section>
+        </div>
+
+        <div id="toast" class="toast" aria-live="assertive" aria-atomic="true"></div>
+
+        <div id="debug" class="debug">
+          <div class="debugTitle">Debug</div>
+          <div id="debugLines" class="debugLines"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
+
