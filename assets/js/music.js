@@ -147,11 +147,11 @@ export function createMusic(api) {
       });
   }
 
-  /** Use track.url (full URL) if present, else track.file under base + assets/music/ */
+  /** Use track.url (full URL) if present; else track.file or track.url (local path) under base + assets/music/ */
   function getTrackAudioSrc(track, base) {
     const url = (track.url || "").trim();
     if (url && (url.startsWith("http://") || url.startsWith("https://"))) return url;
-    const filePath = (track.file || "").replace(/^\//, "");
+    const filePath = ((track.file || track.url) || "").replace(/^\//, "").trim();
     if (!filePath) return "";
     return base + "assets/music/" + encodeURI(filePath).replace(/#/g, "%23");
   }
