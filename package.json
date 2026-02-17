@@ -1,0 +1,17 @@
+{
+  "name": "dexnexus-streaming-lab",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:pages": "node tools/build-pages.mjs",
+    "build:emotes": "node tools/build-emotes.mjs",
+    "build:touch-portal": "node tools/build-touch-portal.mjs",
+    "build:images": "node tools/build-image-map.mjs",
+    "build:backups": "node tools/build-backup-zips.mjs",
+    "inventory:placeholders": "node tools/create-inventory-placeholders.mjs",
+    "build": "npm run build:pages && npm run build:touch-portal && npm run build:images && npm run build:backups"
+  },
+  "dependencies": {
+    "archiver": "^7.0.1"
+  }
+}

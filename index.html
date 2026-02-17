@@ -1,151 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Domain test — DexNeXuS Streaming Lab</title>
-    <style>
-      /* Match real site: variables + base */
-      :root {
-        color-scheme: dark;
-        --dx-bg: #07070c;
-        --dx-bg-2: #0d0d16;
-        --dx-surface: rgba(255, 255, 255, 0.06);
-        --dx-surface-2: rgba(255, 255, 255, 0.09);
-        --dx-border: rgba(255, 255, 255, 0.12);
-        --dx-text: #f5f7ff;
-        --dx-text-2: rgba(245, 247, 255, 0.75);
-        --dx-text-3: rgba(245, 247, 255, 0.55);
-        --dx-purple: #8b5cf6;
-        --dx-purple-2: #c084fc;
-        --dx-blue: #60a5fa;
-        --dx-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
-        --dx-radius: 14px;
-        --dx-radius-sm: 10px;
-        --dx-max: 1180px;
-        --dx-font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif;
-      }
-      * { box-sizing: border-box; }
-      html, body { height: 100%; margin: 0; font-family: var(--dx-font); color: var(--dx-text); }
-      body {
-        background: radial-gradient(900px 600px at 20% 0%, rgba(139, 92, 246, 0.25), transparent 60%),
-          radial-gradient(900px 600px at 90% 10%, rgba(96, 165, 250, 0.18), transparent 60%),
-          radial-gradient(700px 500px at 30% 85%, rgba(192, 132, 252, 0.13), transparent 60%),
-          linear-gradient(135deg, var(--dx-bg), var(--dx-bg-2));
-      }
-      a { color: inherit; }
+    <title>DexNeXuS — Streaming Lab</title>
+    <meta
+      name="description"
+      content="DexNeXuS — streaming setup ideas, Streamer.bot actions, OBS resources, Touch Portal stuff, and small tutorials."
+    />
 
-      .dx-skip-link {
-        position: absolute; left: 12px; top: 12px;
-        padding: 10px 12px; border-radius: 10px; border: 1px solid var(--dx-border);
-        background: rgba(0, 0, 0, 0.7); box-shadow: var(--dx-shadow);
-        transform: translateY(-150%); transition: transform 120ms ease-out; z-index: 9999;
-      }
-      .dx-skip-link:focus { transform: translateY(0); outline: 2px solid rgba(139, 92, 246, 0.8); outline-offset: 2px; }
+    <meta property="og:title" content="DexNeXuS — Streaming Lab" id="dxOgTitle" />
+    <meta
+      property="og:description"
+      content="Streaming setup ideas, Streamer.bot actions, OBS resources, Touch Portal stuff, and tutorials."
+      id="dxOgDescription"
+    />
+    <meta property="og:image" content="" id="dxOgImage" />
+    <meta property="og:type" content="website" />
 
-      .dx-container { max-width: var(--dx-max); margin: 0 auto; padding: 0 18px; }
-
-      /* Header */
-      .dx-header {
-        position: sticky; top: 0; z-index: 50;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        background: rgba(7, 7, 12, 0.72);
-        backdrop-filter: blur(18px);
-      }
-      .dx-header-inner {
-        display: flex; align-items: center; justify-content: space-between; gap: 18px;
-        padding: 14px 0;
-      }
-      .dx-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-      .dx-logo {
-        width: 42px; height: 42px; border-radius: 14px;
-        display: grid; place-items: center; font-weight: 800; letter-spacing: -0.04em;
-        background: linear-gradient(135deg, rgba(139, 92, 246, 0.95), rgba(192, 132, 252, 0.9));
-        box-shadow: 0 14px 36px rgba(139, 92, 246, 0.25);
-        color: #fff;
-      }
-      .dx-brand-title {
-        display: block; font-weight: 800; letter-spacing: -0.03em;
-        background: linear-gradient(135deg, var(--dx-text), var(--dx-purple-2));
-        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-      .dx-brand-subtitle {
-        display: block; font-size: 12px; color: var(--dx-text-3); margin-top: 1px;
-        font-weight: 600; letter-spacing: 0.06em;
-      }
-      .dx-header-tagline {
-        display: none; font-size: 0.8rem; color: var(--dx-text-2); margin: 2px 0 0; font-weight: 400;
-      }
-      @media (min-width: 869px) { .dx-header-tagline { display: block; } }
-      .dx-test-badge {
-        font-size: 12px; padding: 6px 10px; border-radius: 999px;
-        border: 1px solid rgba(139, 92, 246, 0.35);
-        background: rgba(139, 92, 246, 0.14);
-        color: var(--dx-purple-2);
-      }
-
-      /* Main + card */
-      .dx-main { padding: 22px 0 58px; }
-      .dx-content h1 { font-size: clamp(26px, 3vw, 38px); letter-spacing: -0.03em; margin: 0 0 10px; }
-      .dx-content p { color: var(--dx-text-2); line-height: 1.7; margin: 0 0 14px; }
-      .dx-card {
-        border-radius: var(--dx-radius); border: 1px solid rgba(255, 255, 255, 0.12);
-        background: rgba(255, 255, 255, 0.05);
-        box-shadow: 0 18px 55px rgba(0, 0, 0, 0.25);
-        padding: 18px;
-      }
-      .dx-content-lead { margin: 0 0 14px; font-size: 1.05rem; line-height: 1.65; color: var(--dx-text-2); }
-
-      /* Footer */
-      .dx-footer {
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-        background: rgba(7, 7, 12, 0.55);
-      }
-      .dx-footer-top {
-        height: 2px;
-        background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.35), rgba(96, 165, 250, 0.25), transparent);
-      }
-      .dx-footer-inner {
-        display: flex; align-items: center; justify-content: space-between; gap: 14px;
-        padding: 20px 0; flex-wrap: wrap;
-      }
-      .dx-footer-title { font-weight: 800; letter-spacing: -0.03em; }
-      .dx-footer-muted { color: var(--dx-text-3); font-size: 12px; }
-      .dx-footer-links { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
-      .dx-link {
-        color: rgba(245, 247, 255, 0.86); text-decoration: none;
-        border-bottom: 1px dashed rgba(245, 247, 255, 0.35); font-size: 13px;
-      }
-      .dx-link:hover { border-bottom-color: rgba(245, 247, 255, 0.7); }
-      .dx-muted { color: var(--dx-text-3); font-size: 12px; margin-top: 10px; }
-    </style>
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+    <!-- Google Analytics (GA4): replace G-XXXXXXXXXX with your Measurement ID from analytics.google.com -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5B94Q0DNXG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-5B94Q0DNXG');
+    </script>
+    <link rel="stylesheet" href="assets/css/variables.css" />
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/nav-mobile.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/cards.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/tabs-commands.css" />
+    <link rel="stylesheet" href="assets/css/nav-desktop.css" />
+    <link rel="stylesheet" href="assets/css/search-results.css" />
+    <link rel="stylesheet" href="assets/css/music.css" />
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js" defer></script>
   </head>
   <body>
     <a class="dx-skip-link" href="#main">Skip to content</a>
 
     <header class="dx-header">
       <div class="dx-header-inner dx-container">
-        <a class="dx-brand" href="test.html" aria-label="DexNeXuS home">
-          <span class="dx-logo" aria-hidden="true">D</span>
+        <a class="dx-brand" href="index.html?page=home" aria-label="DexNeXuS home">
+          <img class="dx-logo dx-logo-img" src="assets/images/logo/DexNeXuS-Logo-purple.png" alt="" width="42" height="42" aria-hidden="true" />
           <span class="dx-brand-text">
             <span class="dx-brand-title">DexNeXuS</span>
             <span class="dx-brand-subtitle">Streaming Lab</span>
             <span class="dx-header-tagline">Streaming resources</span>
           </span>
         </a>
-        <span class="dx-test-badge">Domain test</span>
+
+        <nav id="dxNavDesktop" class="dx-nav-desktop" aria-label="Primary navigation"></nav>
+
+        <div class="dx-header-right">
+          <button type="button" class="dx-nav-toggle dx-icon-btn" aria-label="Open menu" aria-expanded="false" aria-controls="dxNavPanel">
+            <span class="dx-nav-toggle-icon" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="dx-icon-btn dx-search-trigger" aria-label="Search pages" aria-expanded="false" aria-controls="dxSearchOverlay">
+            <span class="iconify" data-icon="mdi:magnify" aria-hidden="true"></span>
+          </button>
+          <div id="dxHeaderSocial" class="dx-header-social" aria-label="Social links"></div>
+          <div id="dxTwitchSlot" class="dx-twitch-slot">
+            <button type="button" class="dx-btn dx-btn--primary dx-twitch-login" aria-label="Log in with Twitch (demo)">Log in with Twitch (demo)</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="dxSearchOverlay" class="dx-search-overlay" aria-hidden="true" hidden>
+        <div class="dx-search-overlay-inner dx-search-overlay-wrap">
+          <div class="dx-search-overlay-row">
+            <label class="dx-sr-only" for="dxSearchOverlayInput">Search</label>
+            <input id="dxSearchOverlayInput" class="dx-input" type="search" placeholder="Search pages…" autocomplete="off" />
+            <button type="button" class="dx-search-close" aria-label="Close search">
+              <span class="iconify" data-icon="mdi:close" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div id="dxSearchResults" class="dx-search-results" role="list"></div>
+        </div>
+      </div>
+
+      <div id="dxNavPanel" class="dx-nav-panel" aria-label="Mobile navigation">
+        <div class="dx-nav-search">
+          <label class="dx-sr-only" for="dxSearch">Search</label>
+          <input id="dxSearch" class="dx-input" type="search" placeholder="Search pages…" autocomplete="off" />
+        </div>
+        <div id="dxNavGroups" class="dx-nav-groups" role="list"></div>
       </div>
     </header>
 
     <main id="main" class="dx-main">
       <div class="dx-container">
-        <article class="dx-content">
-          <div class="dx-card">
-            <h1>Domain test — OK</h1>
-            <p class="dx-content-lead">If you see this page, your domain is working and you can upload the full Streaming site.</p>
-            <p>This is a standalone test page with the same look and feel as the real site: same header, colours, and footer. No navigation, search, or images — just enough to confirm the domain serves correctly.</p>
-          </div>
+        <div id="dxToastHost" class="dx-toast-host" aria-live="polite" aria-atomic="true"></div>
+
+        <div id="dxLoading" class="dx-loading" hidden>
+          <div class="dx-spinner" aria-hidden="true"></div>
+          <div class="dx-loading-text">Loading…</div>
+        </div>
+
+        <article id="dxContent" class="dx-content" aria-live="polite">
+          <noscript>
+            <div class="dx-card">
+              <h1>JavaScript required</h1>
+              <p>This site loads pages dynamically. Please enable JavaScript.</p>
+            </div>
+          </noscript>
         </article>
       </div>
     </main>
@@ -159,15 +122,57 @@
         </div>
         <div class="dx-footer-right">
           <nav class="dx-footer-links" aria-label="Footer links">
-            <a class="dx-link" href="#main">About</a>
-            <a class="dx-link" href="#main">Music</a>
-            <a class="dx-link" href="#main">Links</a>
-            <a class="dx-link" href="#main">Privacy</a>
-            <a class="dx-link" href="#main">Terms</a>
+            <a class="dx-link" href="?page=about">About</a>
+            <a class="dx-link" href="?page=music">Music</a>
+            <a class="dx-link" href="?page=links">Links</a>
+            <a class="dx-link" href="?page=privacy">Privacy</a>
+            <a class="dx-link" href="?page=terms">Terms of Service</a>
+            <a class="dx-link" href="#" id="dxCopyPageLink">Copy page link</a>
           </nav>
-          <p class="dx-muted">Test page — no external assets.</p>
+        <p class="dx-footer-credits dx-muted">Icons: <a class="dx-link" href="https://iconify.design/" target="_blank" rel="noopener noreferrer">Iconify</a>. Third-party assets credited on respective pages.</p>
+        </div>
+      </div>
+      <div id="dxMusicPlayer" class="dx-music-player" hidden aria-label="Music player">
+        <audio id="dxMusicAudio" preload="metadata"></audio>
+        <div class="dx-music-player-inner dx-container">
+          <div class="dx-music-player-artwork">
+            <img id="dxMusicArtwork" src="" alt="" />
+          </div>
+          <div class="dx-music-player-info">
+            <div class="dx-music-player-title-wrap">
+              <span id="dxMusicTitle" class="dx-music-player-title">—</span>
+            </div>
+            <div class="dx-music-player-artist-wrap">
+              <span id="dxMusicArtist" class="dx-music-player-artist">—</span>
+            </div>
+          </div>
+          <div class="dx-music-player-controls">
+            <button type="button" class="dx-music-btn" id="dxMusicPrev" aria-label="Previous track">
+              <span class="iconify" data-icon="mdi:skip-previous" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="dx-music-btn dx-music-btn--play" id="dxMusicPlay" aria-label="Play">
+              <span class="iconify" data-icon="mdi:play" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="dx-music-btn" id="dxMusicNext" aria-label="Next track">
+              <span class="iconify" data-icon="mdi:skip-next" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="dx-music-player-progress-wrap">
+            <span id="dxMusicTime" class="dx-music-time">0:00</span>
+            <input type="range" id="dxMusicSeek" class="dx-music-seek" min="0" max="100" value="0" aria-label="Seek" />
+            <span id="dxMusicDuration" class="dx-music-time">0:00</span>
+          </div>
+          <div class="dx-music-player-volume">
+            <span class="iconify dx-music-volume-icon" data-icon="mdi:volume-high" aria-hidden="true"></span>
+            <input type="range" id="dxMusicVolume" class="dx-music-volume" min="0" max="100" value="80" aria-label="Volume" />
+          </div>
+          <button type="button" class="dx-music-btn dx-music-btn--close" id="dxMusicClose" aria-label="Close player">
+            <span class="iconify" data-icon="mdi:close" aria-hidden="true"></span>
+          </button>
         </div>
       </div>
     </footer>
+
+    <script type="module" src="assets/js/app.js"></script>
   </body>
 </html>
