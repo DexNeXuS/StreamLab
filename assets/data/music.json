@@ -1,37 +1,243 @@
 {
-  "albums": [
-    {"id": "soft-rules-for-existing", "name": "Soft Rules for Existing", "artwork": "soft-rules-for-existing.png"},
-    {"id": "living-days-on-repeat", "name": "Living Days on Repeat", "artwork": "Living Days on Repeat.png"},
-    {"id": "gltch-bounce", "name": "GL!TCH BOUNCE", "artwork": "GL!TCH BOUNCE artwork.png"},
-    {"id": "1,2,3,4,5", "name": "1,2,3,4,5", "artwork": "1,2,3,4,5.png"}
-  ],
-  "tabs": [
-    {"id": "original", "label": "Original music"},
-    {"id": "suno", "label": "Suno"}
-  ],
-  "tracks": [
-    {"id": "as-soft-as-weather", "album": "soft-rules-for-existing", "tab": "suno", "title": "As Soft As Weather", "artist": "DexNeXuS", "url": "soft-rules-for-existing/As Soft As Weather_.wav", "artwork": "As Soft As Weather_.png"},
-    {"id": "avatar", "album": "soft-rules-for-existing", "tab": "suno", "title": "Avatar", "artist": "DexNeXuS", "url": "soft-rules-for-existing/Avatar_.wav", "artwork": "Avatar_.png"},
-    {"id": "between-the-notes", "album": "soft-rules-for-existing", "tab": "suno", "title": "Between The Notes", "artist": "DexNeXuS", "url": "soft-rules-for-existing/Between The Notes_.wav", "artwork": "Between The Notes_.png"},
-    {"id": "colours-i-can-hear", "album": "soft-rules-for-existing", "tab": "suno", "title": "Colours I can hear", "artist": "DexNeXuS", "url": "soft-rules-for-existing/Colours I can hear_.wav", "artwork": "Colours I can hear_.jpeg"},
-    {"id": "i-think-i-can", "album": "soft-rules-for-existing", "tab": "suno", "title": "I Think I Can", "artist": "DexNeXuS", "url": "soft-rules-for-existing/I Think I Can_.wav", "artwork": "I Think I Can_.png"},
-    {"id": "pair-well-with-me", "album": "soft-rules-for-existing", "tab": "suno", "title": "Pair Well With Me", "artist": "DexNeXuS", "url": "soft-rules-for-existing/Pair Well With Me_.wav", "artwork": "Pair Well With Me_.png"},
-    {"id": "paper-halo", "album": "soft-rules-for-existing", "tab": "suno", "title": "Paper Halo", "artist": "DexNeXuS", "url": "soft-rules-for-existing/Paper Halo_.wav", "artwork": "Paper Halo_.png"},
-    {"id": "porous-gods", "album": "soft-rules-for-existing", "tab": "suno", "title": "Porous Gods Leave No Shadows", "artist": "DexNeXuS", "url": "soft-rules-for-existing/Porous Gods Leave No Shadows_.wav", "artwork": "Porous Gods Leave No Shadows_.png"},
-    {"id": "soft-shelled-things", "album": "soft-rules-for-existing", "tab": "suno", "title": "Soft-Shelled Things", "artist": "DexNeXuS", "url": "soft-rules-for-existing/Soft-Shelled Things_.wav", "artwork": "Soft-Shelled Things_.png"},
-    {"id": "standby-light", "album": "soft-rules-for-existing", "tab": "suno", "title": "Standby Light", "artist": "DexNeXuS", "url": "soft-rules-for-existing/Standby Light_.wav", "artwork": "Standby Light_.png"},
-    {"id": "still-here", "album": "soft-rules-for-existing", "tab": "suno", "title": "Still Here", "artist": "DexNeXuS", "url": "soft-rules-for-existing/Still Here_.wav", "artwork": "Still Here_.png"},
-    {"id": "the-long-way-forward", "album": "soft-rules-for-existing", "tab": "suno", "title": "The Long Way Forward", "artist": "DexNeXuS", "url": "soft-rules-for-existing/The Long Way Forward_.wav", "artwork": "The Long Way Forward_.png"},
-    {"id": "the-next-version-of-us", "album": "soft-rules-for-existing", "tab": "suno", "title": "The Next Version of Us", "artist": "DexNeXuS", "url": "soft-rules-for-existing/The Next Version of Us_.wav", "artwork": "The Next Version of Us_.png"},
-    {"id": "the-quiet-bit", "album": "soft-rules-for-existing", "tab": "suno", "title": "The Quiet Bit…", "artist": "DexNeXuS", "url": "soft-rules-for-existing/The Quiet Bit…_.wav", "artwork": "The Quiet Bit…_.png"},
-    {"id": "where-you-go", "album": "soft-rules-for-existing", "tab": "suno", "title": "Where You Go", "artist": "DexNeXuS", "url": "soft-rules-for-existing/Where You Go__.wav", "artwork": "Where You Go__.png"},
-    {"id": "borrowed-mornings", "album": "living-days-on-repeat", "tab": "suno", "title": "Borrowed Mornings", "artist": "DexNeXuS", "url": "living-days-on-repeat/Borrowed Mornings_.wav", "artwork": "Borrowed Mornings_.png"},
-    {"id": "gltch-bounce", "album": "gltch-bounce", "tab": "suno", "title": "GL!TCH BOUNCE", "artist": "DexNeXuS", "url": "Gl!TCH BOUNCE/GL!TCH BOUNCE.wav", "artwork": "GL!TCH BOUNCE.png"},
-    {"id": "midnight-hunt", "album": "gltch-bounce", "tab": "suno", "title": "MIDNIGHT HUNT", "artist": "DexNeXuS", "url": "Gl!TCH BOUNCE/MIDNIGHT HUNT.wav", "artwork": "MIDNIGHT HUNT.png"},
-    {"id": "venom-velocity", "album": "gltch-bounce", "tab": "suno", "title": "VENOM VELOCITY", "artist": "DexNeXuS", "url": "Gl!TCH BOUNCE/VENOM VELOCITY.wav", "artwork": "VENOM VELOCITY.png"},
-    {"id": "noodle-theory", "album": "1,2,3,4,5", "tab": "suno", "title": "NOODLE THEORY - (1,2,3,4,5)", "artist": "DexNeXuS", "url": "1,2,3,4,5/NOODLE THEORY - (1,2,3,4,5).wav", "artwork": "1,2,3,4,5.png"},
-    {"id": "stuck-to-the-sole", "album": "1,2,3,4,5", "tab": "suno", "title": "STUCK TO THE SOLE", "artist": "DexNeXuS", "url": "1,2,3,4,5/STUCK TO THE SOLE.wav", "artwork": "STUCK TO THE SOLE.png"},
-    {"id": "user-agreement", "album": "1,2,3,4,5", "tab": "suno", "title": "USER AGREEMENT", "artist": "DexNeXuS", "url": "1,2,3,4,5/User Agreement.wav", "artwork": "User Agreement.png"},
-    {"id": "aerodynamic-confidence", "album": "1,2,3,4,5", "tab": "suno", "title": "AERODYNAMIC CONFIDENCE", "artist": "DexNeXuS", "url": "1,2,3,4,5/Aerodynamic Confidence.wav", "artwork": "Aerodynamic Confidence.png"}
-  ]
-}
+    "albums": [
+      {
+        "id": "soft-rules-for-existing",
+        "name": "Soft Rules for Existing",
+        "artwork": "soft-rules-for-existing.png"
+      },
+      {
+        "id": "living-days-on-repeat",
+        "name": "Living Days on Repeat",
+        "artwork": "Living Days on Repeat.png"
+      },
+      {
+        "id": "gltch-bounce",
+        "name": "GL!TCH BOUNCE",
+        "artwork": "GL!TCH BOUNCE artwork.png"
+      },
+      {
+        "id": "1,2,3,4,5",
+        "name": "1,2,3,4,5",
+        "artwork": "1,2,3,4,5.png"
+      }
+    ],
+    "tabs": [
+      {
+        "id": "original",
+        "label": "Original music"
+      },
+      {
+        "id": "suno",
+        "label": "Suno"
+      }
+    ],
+    "tracks": [
+      {
+        "id": "as-soft-as-weather",
+        "album": "soft-rules-for-existing",
+        "tab": "suno",
+        "title": "As Soft As Weather",
+        "artist": "DexNeXuS",
+        "url": "soft-rules-for-existing/As Soft As Weather_.wav",
+        "artwork": "As Soft As Weather_.png"
+      },
+      {
+        "id": "avatar",
+        "album": "soft-rules-for-existing",
+        "tab": "suno",
+        "title": "Avatar",
+        "artist": "DexNeXuS",
+        "url": "soft-rules-for-existing/Avatar_.wav",
+        "artwork": "Avatar_.png"
+      },
+      {
+        "id": "between-the-notes",
+        "album": "soft-rules-for-existing",
+        "tab": "suno",
+        "title": "Between The Notes",
+        "artist": "DexNeXuS",
+        "url": "soft-rules-for-existing/Between The Notes_.wav",
+        "artwork": "Between The Notes_.png"
+      },
+      {
+        "id": "colours-i-can-hear",
+        "album": "soft-rules-for-existing",
+        "tab": "suno",
+        "title": "Colours I can hear",
+        "artist": "DexNeXuS",
+        "url": "soft-rules-for-existing/Colours I can hear_.wav",
+        "artwork": "Colours I can hear_.jpeg"
+      },
+      {
+        "id": "i-think-i-can",
+        "album": "soft-rules-for-existing",
+        "tab": "suno",
+        "title": "I Think I Can",
+        "artist": "DexNeXuS",
+        "url": "soft-rules-for-existing/I Think I Can_.wav",
+        "artwork": "I Think I Can_.png"
+      },
+      {
+        "id": "pair-well-with-me",
+        "album": "soft-rules-for-existing",
+        "tab": "suno",
+        "title": "Pair Well With Me",
+        "artist": "DexNeXuS",
+        "url": "soft-rules-for-existing/Pair Well With Me_.wav",
+        "artwork": "Pair Well With Me_.png"
+      },
+      {
+        "id": "paper-halo",
+        "album": "soft-rules-for-existing",
+        "tab": "suno",
+        "title": "Paper Halo",
+        "artist": "DexNeXuS",
+        "url": "soft-rules-for-existing/Paper Halo_.wav",
+        "artwork": "Paper Halo_.png"
+      },
+      {
+        "id": "porous-gods",
+        "album": "soft-rules-for-existing",
+        "tab": "suno",
+        "title": "Porous Gods Leave No Shadows",
+        "artist": "DexNeXuS",
+        "url": "soft-rules-for-existing/Porous Gods Leave No Shadows_.wav",
+        "artwork": "Porous Gods Leave No Shadows_.png"
+      },
+      {
+        "id": "soft-shelled-things",
+        "album": "soft-rules-for-existing",
+        "tab": "suno",
+        "title": "Soft-Shelled Things",
+        "artist": "DexNeXuS",
+        "url": "soft-rules-for-existing/Soft-Shelled Things_.wav",
+        "artwork": "Soft-Shelled Things_.png"
+      },
+      {
+        "id": "standby-light",
+        "album": "soft-rules-for-existing",
+        "tab": "suno",
+        "title": "Standby Light",
+        "artist": "DexNeXuS",
+        "url": "soft-rules-for-existing/Standby Light_.wav",
+        "artwork": "Standby Light_.png"
+      },
+      {
+        "id": "still-here",
+        "album": "soft-rules-for-existing",
+        "tab": "suno",
+        "title": "Still Here",
+        "artist": "DexNeXuS",
+        "url": "soft-rules-for-existing/Still Here_.wav",
+        "artwork": "Still Here_.png"
+      },
+      {
+        "id": "the-long-way-forward",
+        "album": "soft-rules-for-existing",
+        "tab": "suno",
+        "title": "The Long Way Forward",
+        "artist": "DexNeXuS",
+        "url": "soft-rules-for-existing/The Long Way Forward_.wav",
+        "artwork": "The Long Way Forward_.png"
+      },
+      {
+        "id": "the-next-version-of-us",
+        "album": "soft-rules-for-existing",
+        "tab": "suno",
+        "title": "The Next Version of Us",
+        "artist": "DexNeXuS",
+        "url": "soft-rules-for-existing/The Next Version of Us_.wav",
+        "artwork": "The Next Version of Us_.png"
+      },
+      {
+        "id": "the-quiet-bit",
+        "album": "soft-rules-for-existing",
+        "tab": "suno",
+        "title": "The Quiet Bit…",
+        "artist": "DexNeXuS",
+        "url": "soft-rules-for-existing/The Quiet Bit…_.wav",
+        "artwork": "The Quiet Bit….png"
+      },
+      {
+        "id": "where-you-go",
+        "album": "soft-rules-for-existing",
+        "tab": "suno",
+        "title": "Where You Go",
+        "artist": "DexNeXuS",
+        "url": "soft-rules-for-existing/Where You Go__.wav",
+        "artwork": "Where You Go__.png"
+      },
+      {
+        "id": "borrowed-mornings",
+        "album": "living-days-on-repeat",
+        "tab": "suno",
+        "title": "Borrowed Mornings",
+        "artist": "DexNeXuS",
+        "url": "living-days-on-repeat/Borrowed Mornings_.wav",
+        "artwork": "Borrowed Mornings_.png"
+      },
+      {
+        "id": "gltch-bounce",
+        "album": "gltch-bounce",
+        "tab": "suno",
+        "title": "GL!TCH BOUNCE",
+        "artist": "DexNeXuS",
+        "url": "Gl!TCH BOUNCE/GL!TCH BOUNCE.wav",
+        "artwork": "GL!TCH BOUNCE.png"
+      },
+      {
+        "id": "midnight-hunt",
+        "album": "gltch-bounce",
+        "tab": "suno",
+        "title": "MIDNIGHT HUNT",
+        "artist": "DexNeXuS",
+        "url": "Gl!TCH BOUNCE/MIDNIGHT HUNT.wav",
+        "artwork": "MIDNIGHT HUNT.png"
+      },
+      {
+        "id": "venom-velocity",
+        "album": "gltch-bounce",
+        "tab": "suno",
+        "title": "VENOM VELOCITY",
+        "artist": "DexNeXuS",
+        "url": "Gl!TCH BOUNCE/VENOM VELOCITY.wav",
+        "artwork": "VENOM VELOCITY.png"
+      },
+      {
+        "id": "noodle-theory",
+        "album": "1,2,3,4,5",
+        "tab": "suno",
+        "title": "NOODLE THEORY - (1,2,3,4,5)",
+        "artist": "DexNeXuS",
+        "url": "1,2,3,4,5/NOODLE THEORY - (1,2,3,4,5).wav",
+        "artwork": "1,2,3,4,5.png"
+      },
+      {
+        "id": "stuck-to-the-sole",
+        "album": "1,2,3,4,5",
+        "tab": "suno",
+        "title": "STUCK TO THE SOLE",
+        "artist": "DexNeXuS",
+        "url": "1,2,3,4,5/STUCK TO THE SOLE.wav",
+        "artwork": "STUCK TO THE SOLE.png"
+      },
+      {
+        "id": "user-agreement",
+        "album": "1,2,3,4,5",
+        "tab": "suno",
+        "title": "USER AGREEMENT",
+        "artist": "DexNeXuS",
+        "url": "1,2,3,4,5/User Agreement.wav",
+        "artwork": "User Agreement.png"
+      },
+      {
+        "id": "aerodynamic-confidence",
+        "album": "1,2,3,4,5",
+        "tab": "suno",
+        "title": "AERODYNAMIC CONFIDENCE",
+        "artist": "DexNeXuS",
+        "url": "1,2,3,4,5/Aerodynamic Confidence.wav",
+        "artwork": "Aerodynamic Confidence.png"
+      }
+    ]
+  }
