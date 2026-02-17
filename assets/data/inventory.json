@@ -1,0 +1,44 @@
+{
+  "categories": {
+    "standalone": {
+      "title": "Standalone Items",
+      "description": "Purchased or used directly (no crafting required).",
+      "items": [
+        {"id":"black-candle","name":"Black Candle","image":"black-candle.svg","price":"450 Nexi","tags":"Ritual • Binding","flavour":"A candle burned during unsanctioned maintenance windows. The flame feeds on momentum.","effect":"Temporarily boosts point gain, but locks gambling for 2 minutes.","use":"Self-use only","purchaseable":true},
+        {"id":"blood-contract","name":"Blood Contract","image":"blood-contract.svg","price":"600 Nexi","tags":"Ritual • Oath","flavour":"An agreement signed in points. The system will honour it. In its own way.","effect":"Sacrifice Nexi for a random outcome (double later, lose more, or trigger a global event).","use":"Self-use only","purchaseable":true},
+        {"id":"hex-coin","name":"Hex Coin","image":"hex-coin.svg","price":"300 Nexi","tags":"Curse • Chance","flavour":"A coin that never lands cleanly. Nobody knows the odds. Including the coin.","effect":"Random screen effect (mostly cosmetic chaos, sometimes bonus Nexi).","use":"Self-use only","purchaseable":true},
+        {"id":"trap-card","name":"Trap Card","image":"trap-card.svg","price":"800 Nexi","tags":"Counter • Reactive","flavour":"Activates automatically when targeted. Punishes confidence.","effect":"Automatically reflects the next item used on you back to the user.","use":"Passive (auto-activates)","purchaseable":true},
+        {"id":"veil-of-ash","name":"Veil of Ash","image":"veil-of-ash.svg","price":"Free","tags":"Ward • Disposable","flavour":"A thin veil that turns hostile intent into smoke.","effect":"Blocks the next item used on you.","use":"Self-use only","purchaseable":true},
+        {"id":"moment-of-silence","name":"Moment of Silence","image":"moment-of-silence.svg","price":"Free","tags":"Ward • Temporal","flavour":"A brief pause in which nothing reaches you.","effect":"Grants 2 minutes of item immunity.","use":"Self-use only","purchaseable":true},
+        {"id":"reality-tear","name":"Reality Tear","image":"reality-tear.svg","price":"1200 Nexi","tags":"Anomaly • Unstable","flavour":"Something slipped through. It stayed.","effect":"Triggers a random stream-wide effect.","use":"Self-use only","purchaseable":true},
+        {"id":"mirror-of-malice","name":"Mirror of Malice","image":"mirror-of-malice.svg","price":"700 Nexi","tags":"Curse • Reflective","flavour":"The next intent aimed at you is returned with interest.","effect":"Reflects the next item used on you back with enhanced effect.","use":"Passive (auto-activates)","purchaseable":true},
+        {"id":"smoke-bomb","name":"Smoke Bomb","image":"smoke-bomb.svg","price":"500 Nexi","tags":"Escape • Chaos","flavour":"A cloud of confusion that clears the path.","effect":"Clears Twitch chat.","use":"Self-use only","purchaseable":true},
+        {"id":"soul-thief","name":"Soul Thief","image":"soul-thief.svg","price":"1500 Nexi","tags":"Theft • Forbidden","flavour":"Steals points directly from the target. The price is paid in whispers.","effect":"Steals 10–20% of target's Nexi (requires target).","use":"Must target another user","limit":"Max 3 per user","purchaseable":false}
+      ]
+    },
+    "craftable": {
+      "title": "Craftable Items",
+      "description": "Created via recipes (uses materials + other items).",
+      "items": [
+        {"id":"phantoms-veil","name":"Phantom's Veil","image":"phantoms-veil.svg","price":"1800 Nexi","tags":"Crafted • Epic","flavour":"Makes you invisible to item effects for a time. Crafted from shadows and silence.","effect":"10 minutes of immunity to all item effects.","recipe":"2x Shadow Weave, 3x Bone Fragment"},
+        {"id":"chaos-orb","name":"Chaos Orb","image":"chaos-orb.svg","price":"1000 Nexi","tags":"Crafted • Rare","flavour":"A sphere of pure entropy. Reverses all active effects when shattered.","effect":"Reverses all active effects (good becomes bad, bad becomes good).","recipe":"2x Cursed Essence, 2x Echo Stone, 1x Void Shard"},
+        {"id":"deaths-whisper","name":"Death's Whisper","image":"deaths-whisper.svg","price":"2000 Nexi","tags":"Crafted • Legendary","flavour":"A blade forged from final words. Steals points and silences in one strike.","effect":"Steals 15–25% of target's Nexi AND mutes them for 3 minutes.","recipe":"Silence Curse, Soul Thief, Necrotic Catalyst","limit":"Max 1 per user"}
+      ]
+    },
+    "materials": {
+      "title": "Crafting Materials",
+      "description": "Materials are mostly obtained via loot tables/trading.",
+      "items": [
+        {"id":"shadow-weave","name":"Shadow Weave","image":"shadow-weave.svg","price":"400 Nexi value","tags":"Crafting • Material","flavour":"A thread spun from darkness itself. Used in forbidden crafts.","obtainable":"Loot tables, trading"},
+        {"id":"bone-fragment","name":"Bone Fragment","image":"bone-fragment.svg","price":"250 Nexi value","tags":"Crafting • Material","flavour":"A remnant of something that once was. Holds residual power.","obtainable":"Loot tables, trading"},
+        {"id":"cursed-essence","name":"Cursed Essence","image":"cursed-essence.svg","price":"350 Nexi value","tags":"Crafting • Material","flavour":"Condensed malice in liquid form. Handle with care.","obtainable":"Loot tables, trading"},
+        {"id":"echo-stone","name":"Echo Stone","image":"echo-stone.svg","price":"—","tags":"Material","flavour":"A stone that holds echoes of past actions.","obtainable":"Loot tables"},
+        {"id":"soul-anchor","name":"Soul Anchor","image":"soul-anchor.svg","price":"—","tags":"Material","flavour":"An anchor that tethers souls to the stream.","obtainable":"Loot tables"},
+        {"id":"blood-moon-token","name":"Blood Moon Token","image":"blood-moon-token.svg","price":"—","tags":"Material","flavour":"A token earned under the blood moon.","obtainable":"Loot tables"},
+        {"id":"void-shard","name":"Void Shard","image":"void-shard.svg","price":"—","tags":"Material","flavour":"A shard of pure void.","obtainable":"Loot tables, recipes"},
+        {"id":"necrotic-catalyst","name":"Necrotic Catalyst","image":"necrotic-catalyst.svg","price":"—","tags":"Material","flavour":"A catalyst of death.","obtainable":"Loot tables, recipes"},
+        {"id":"silence-curse","name":"Silence Curse","image":"silence-curse.svg","price":"—","tags":"Material","flavour":"A curse that silences.","obtainable":"Recipes"}
+      ]
+    }
+  }
+}

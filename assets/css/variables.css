@@ -1,0 +1,94 @@
+/* Variables + base reset (root, body, sr-only, skip-link, container) */
+
+/* DexNeXuS — Streaming Lab
+   Minimal, fast, GitHub-Pages-friendly static styling (no build step required). */
+
+:root {
+  color-scheme: dark;
+
+  --dx-bg: #07070c;
+  --dx-bg-2: #0d0d16;
+  --dx-surface: rgba(255, 255, 255, 0.06);
+  --dx-surface-2: rgba(255, 255, 255, 0.09);
+  --dx-border: rgba(255, 255, 255, 0.12);
+  --dx-text: #f5f7ff;
+  --dx-text-2: rgba(245, 247, 255, 0.75);
+  --dx-text-3: rgba(245, 247, 255, 0.55);
+
+  --dx-purple: #8b5cf6;
+  --dx-purple-2: #c084fc;
+  --dx-blue: #60a5fa;
+  --dx-green: #34d399;
+  --dx-yellow: #fbbf24;
+  --dx-red: #f87171;
+
+  --dx-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
+  --dx-radius: 14px;
+  --dx-radius-sm: 10px;
+  --dx-max: 1180px;
+
+  --dx-font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, "Noto Sans",
+    "Apple Color Emoji", "Segoe UI Emoji";
+  --dx-mono: ui-monospace, "Cascadia Mono", "Cascadia Code", Consolas, "SFMono-Regular", Menlo, Monaco, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--dx-font);
+  background: radial-gradient(900px 600px at 20% 0%, rgba(139, 92, 246, 0.25), transparent 60%),
+    radial-gradient(900px 600px at 90% 10%, rgba(96, 165, 250, 0.18), transparent 60%),
+    radial-gradient(700px 500px at 30% 85%, rgba(192, 132, 252, 0.13), transparent 60%),
+    linear-gradient(135deg, var(--dx-bg), var(--dx-bg-2));
+  color: var(--dx-text);
+}
+
+a {
+  color: inherit;
+}
+
+.dx-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.dx-skip-link {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--dx-border);
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: var(--dx-shadow);
+  transform: translateY(-150%);
+  transition: transform 120ms ease-out;
+  z-index: 9999;
+}
+
+.dx-skip-link:focus {
+  transform: translateY(0);
+  outline: 2px solid rgba(139, 92, 246, 0.8);
+  outline-offset: 2px;
+}
+
+.dx-container {
+  max-width: var(--dx-max);
+  margin: 0 auto;
+  padding: 0 18px;
+}

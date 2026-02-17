@@ -1,0 +1,929 @@
+{
+  "generatedAt": "2026-01-28T22:52:22.9993237Z",
+  "groups": {
+    "MOD TOOLS": {
+      "icon": "🛡️",
+      "title": "",
+      "commands": {
+        "!unpauseReward": {
+          "description": "Resume a paused channel reward",
+          "permissions": "mod"
+        },
+        "!rewardCooldown": {
+          "description": "Set cooldown for a channel reward",
+          "permissions": "mod"
+        },
+        "!prerolls": {
+          "description": "Manage preroll ad settings",
+          "permissions": "mod"
+        },
+        "!whitelistedUrls": {
+          "description": "Show list of allowed URLs",
+          "permissions": "mod"
+        },
+        "!rewardMaxPerStream": {
+          "description": "Set max redemptions per stream",
+          "permissions": "mod"
+        },
+        "!createPrediction": {
+          "description": "Start a new Twitch prediction",
+          "permissions": "mod"
+        },
+        "!timeout": {
+          "description": "Timeout a user for a set duration",
+          "permissions": "mod"
+        },
+        "!modCommands": {
+          "description": "Show list of moderator commands",
+          "permissions": "mod"
+        },
+        "!toggleUrlFilter": {
+          "description": "Turn link posting protection on/off",
+          "permissions": "mod"
+        },
+        "!disableFollowAttackProtection": {
+          "description": "Turn off follow raid protection",
+          "permissions": "mod"
+        },
+        "!enableFollowAttackProtection": {
+          "description": "Turn on follow raid protection",
+          "permissions": "mod"
+        },
+        "!editCommand": {
+          "description": "Modify an existing custom command",
+          "permissions": "mod"
+        },
+        "!scenes": {
+          "description": "List all available OBS scenes",
+          "permissions": "mod"
+        },
+        "!removeUrl": {
+          "description": "Remove URL from whitelist",
+          "permissions": "mod"
+        },
+        "!addUrl": {
+          "description": "Add allowed URL to whitelist",
+          "permissions": "mod"
+        },
+        "!scene": {
+          "description": "Switch to a specific OBS scene",
+          "permissions": "mod"
+        },
+        "!removeTag": {
+          "description": "Remove a channel tag",
+          "permissions": "mod"
+        },
+        "!toggleEmoteProtection": {
+          "description": "Toggle emote spam protection",
+          "permissions": "mod"
+        },
+        "!removeCommand": {
+          "description": "Delete a custom command",
+          "permissions": "mod"
+        },
+        "!unbanWord": {
+          "description": "Remove word from blacklist",
+          "permissions": "mod"
+        },
+        "!customCommands": {
+          "description": "List all custom commands",
+          "permissions": "mod"
+        },
+        "!enableRewards": {
+          "description": "Turn channel point rewards back on",
+          "permissions": "mod"
+        },
+        "!ban": {
+          "description": "Permanently ban a user",
+          "permissions": "mod"
+        },
+        "!removeBottedFollowers": {
+          "description": "Clean up suspected bot followers",
+          "permissions": "mod"
+        },
+        "!addCom": {
+          "description": "Create a new custom command",
+          "permissions": "mod"
+        },
+        "!translate": {
+          "description": "Translate text to another language",
+          "permissions": "mod"
+        },
+        "!rewardDisable": {
+          "description": "Disable a channel reward",
+          "permissions": "mod"
+        },
+        "!createPoll": {
+          "description": "Create a new Twitch poll",
+          "permissions": "mod"
+        },
+        "!endPoll": {
+          "description": "Manually close an active poll",
+          "permissions": "mod"
+        },
+        "!rewardMaxPerUserPerStream": {
+          "description": "Set max redemptions per user per stream",
+          "permissions": "mod"
+        },
+        "!refreshAudio": {
+          "description": "Restart/reconnect audio sources",
+          "permissions": "mod"
+        },
+        "!lock": {
+          "description": "Lock chat (sub-only or follower-only)",
+          "permissions": "mod"
+        },
+        "!permit": {
+          "description": "Allow a user to post a link once",
+          "permissions": "mod"
+        },
+        "!title": {
+          "description": "Update the stream title",
+          "permissions": "mod"
+        },
+        "!shoutout": {
+          "description": "Give a shoutout to another channel",
+          "permissions": "mod"
+        },
+        "!runAds": {
+          "description": "Trigger a commercial/ad break",
+          "permissions": "mod"
+        },
+        "!pauseRewards": {
+          "description": "Temporarily pause all redemptions",
+          "permissions": "mod"
+        },
+        "!urlRemoveUser": {
+          "description": "Revoke a user's link permission",
+          "permissions": "mod"
+        },
+        "!rewardPrompt": {
+          "description": "Change redemption prompt text",
+          "permissions": "mod"
+        },
+        "!endStream": {
+          "description": "End the current stream",
+          "permissions": "mod"
+        },
+        "!game": {
+          "description": "Change the current game/category",
+          "permissions": "mod"
+        },
+        "!skipTTS": {
+          "description": "Skip current text-to-speech message",
+          "permissions": "mod"
+        },
+        "!toggleBlacklistedWordsFilter": {
+          "description": "Enable/disable banned words filter",
+          "permissions": "mod"
+        },
+        "!toggleCapsProtection": {
+          "description": "Turn caps spam protection on/off",
+          "permissions": "mod"
+        },
+        "!refreshBrowserSources": {
+          "description": "Force refresh browser sources in OBS",
+          "permissions": "mod"
+        },
+        "!urlAddUser": {
+          "description": "Allow a user to post links",
+          "permissions": "mod"
+        },
+        "!resolvePrediction": {
+          "description": "End and resolve a prediction",
+          "permissions": "mod"
+        },
+        "!snooze": {
+          "description": "Snooze auto-mod rules temporarily",
+          "permissions": "mod"
+        },
+        "!toggleAsciiProtection": {
+          "description": "Toggle ASCII art/spam protection",
+          "permissions": "mod"
+        },
+        "!rewardTitle": {
+          "description": "Change title of a channel reward",
+          "permissions": "mod"
+        },
+        "!addTag": {
+          "description": "Add a tag to the channel",
+          "permissions": "mod"
+        },
+        "!banWord": {
+          "description": "Add word to auto-mod blacklist",
+          "permissions": "mod"
+        },
+        "!rewardCost": {
+          "description": "Change the cost of a channel reward",
+          "permissions": "mod"
+        },
+        "!removeLatestFollowers": {
+          "description": "Remove most recent bot followers",
+          "permissions": "mod"
+        },
+        "!hateRaid": {
+          "description": "Activate hate-raid protection mode",
+          "permissions": "mod"
+        },
+        "!cancelPrediction": {
+          "description": "Cancel an active prediction",
+          "permissions": "mod"
+        }
+      }
+    },
+    "TWITCH POINTS": {
+      "icon": "💲",
+      "title": "Nexi Commands",
+      "commands": {
+        "!scratchCard": {
+          "description": "Play a scratch card with Nexi",
+          "permissions": ""
+        },
+        "!nexi": {
+          "description": "Check your current Nexi balance",
+          "permissions": ""
+        },
+        "!effects": {
+          "description": "Show available point redemption effects",
+          "permissions": ""
+        },
+        "!enter": {
+          "description": "Enter a Nexi-based competition/raffle",
+          "permissions": ""
+        },
+        "!duel": {
+          "description": "Challenge someone to a Nexi duel",
+          "permissions": ""
+        },
+        "!bet": {
+          "description": "Place a bet with Nexi points",
+          "permissions": ""
+        },
+        "!removeNexi": {
+          "description": "Remove Nexi from a user (mod)",
+          "permissions": "mod"
+        },
+        "!addToAllPresent": {
+          "description": "Give Nexi to everyone currently watching",
+          "permissions": "mod"
+        },
+        "!giveNexi": {
+          "description": "Transfer Nexi to another user",
+          "permissions": ""
+        },
+        "!rumble": {
+          "description": "Start a rumble/battle with points",
+          "permissions": "mod"
+        },
+        "!addNexi": {
+          "description": "Give Nexi points to a user (mod)",
+          "permissions": "mod"
+        },
+        "!addToAllUsers": {
+          "description": "Give Nexi to every user in database",
+          "permissions": "mod"
+        },
+        "!gamble": {
+          "description": "Gamble your Nexi points",
+          "permissions": ""
+        },
+        "!collectTaxes": {
+          "description": "Collect tax from all users (admin)",
+          "permissions": "mod"
+        },
+        "!accept": {
+          "description": "Accept a pending point-related action",
+          "permissions": ""
+        },
+        "!nexiLeaderboard": {
+          "description": "Show richest Nexi holders",
+          "permissions": ""
+        }
+      }
+    },
+    "SPOTIFY & SB": {
+      "icon": "ᯤ",
+      "title": "SPOTIFY COMMANDS",
+      "commands": {
+        "!voteskip": {
+          "description": "Vote to skip current song",
+          "permissions": ""
+        },
+        "!bannedSongs": {
+          "description": "List banned songs",
+          "permissions": ""
+        },
+        "!restart": {
+          "description": "Restart current song",
+          "permissions": "mod"
+        },
+        "!play": {
+          "description": "Resume or start playback",
+          "permissions": ""
+        },
+        "!requests": {
+          "description": "Show song request queue",
+          "permissions": ""
+        },
+        "!pause": {
+          "description": "Pause playback",
+          "permissions": "mod"
+        },
+        "!back": {
+          "description": "Play previous song",
+          "permissions": "mod"
+        },
+        "!queue": {
+          "description": "Show current song queue",
+          "permissions": ""
+        },
+        "!myTopSongs": {
+          "description": "Show your most listened songs",
+          "permissions": ""
+        },
+        "!playlist": {
+          "description": "Show current playlist or link",
+          "permissions": ""
+        },
+        "!broadcasterTopTracks": {
+          "description": "Show streamer's top Spotify tracks",
+          "permissions": ""
+        },
+        "!vol": {
+          "description": "Adjust Spotify volume",
+          "permissions": "mod"
+        },
+        "!topSongs": {
+          "description": "Show most requested songs",
+          "permissions": ""
+        },
+        "!addSongToPlaylistFromInput": {
+          "description": "Add song to a playlist from search",
+          "permissions": ""
+        },
+        "!playlists": {
+          "description": "List your or broadcaster's playlists",
+          "permissions": ""
+        },
+        "!unbanSong": {
+          "description": "Unban a previously banned song",
+          "permissions": "mod"
+        },
+        "!like": {
+          "description": "Like the current song on Spotify",
+          "permissions": "mod"
+        },
+        "!playPlaylist": {
+          "description": "Start playing a Spotify playlist",
+          "permissions": "mod"
+        },
+        "!broadcasterTopArtists": {
+          "description": "Show streamer's top Spotify artists",
+          "permissions": ""
+        },
+        "!myTopArtists": {
+          "description": "Your personal top artists (alias)",
+          "permissions": ""
+        },
+        "!changeDevice": {
+          "description": "Switch Spotify playback device",
+          "permissions": "mod"
+        },
+        "!addSong": {
+          "description": "Add song to queue without requesting",
+          "permissions": "mod"
+        },
+        "!topArtists": {
+          "description": "Show your top listened artists",
+          "permissions": ""
+        },
+        "!remove": {
+          "description": "Remove a song from queue (mod)",
+          "permissions": "mod"
+        },
+        "!sr": {
+          "description": "Request a song (song request)",
+          "permissions": ""
+        },
+        "!devices": {
+          "description": "List available Spotify playback devices",
+          "permissions": "mod"
+        },
+        "!song": {
+          "description": "Show currently playing song",
+          "permissions": ""
+        },
+        "!lastSong": {
+          "description": "Show previous song that played",
+          "permissions": ""
+        },
+        "!wrongsong": {
+          "description": "Remove your last requested song",
+          "permissions": ""
+        },
+        "!skip": {
+          "description": "Skip current song",
+          "permissions": "mod"
+        },
+        "!banSong": {
+          "description": "Ban a song from requests (mod)",
+          "permissions": "mod"
+        },
+        "!myQueue": {
+          "description": "Show your requested songs",
+          "permissions": ""
+        },
+        "!songLink": {
+          "description": "Get Spotify link for current song",
+          "permissions": ""
+        }
+      }
+    },
+    "TWITCH SUBATHON": {
+      "icon": "",
+      "title": "",
+      "commands": {
+        "!subathonAddEvent": {
+          "description": "Add new milestone to subathon",
+          "permissions": "mod"
+        },
+        "!subathonUnpause": {
+          "description": "Resume paused subathon timer",
+          "permissions": "mod"
+        },
+        "!subathonContributePoints": {
+          "description": "Add time using channel points",
+          "permissions": ""
+        },
+        "!subathonRemoveEvent": {
+          "description": "Remove a subathon milestone event",
+          "permissions": "mod"
+        },
+        "!subathonStart": {
+          "description": "Begin a new subathon",
+          "permissions": "mod"
+        },
+        "!subathonAddTime": {
+          "description": "Manually add time to subathon",
+          "permissions": "mod"
+        },
+        "!subathonEndHappyHour": {
+          "description": "End current happy hour",
+          "permissions": "mod"
+        },
+        "!subathonPause": {
+          "description": "Pause the subathon timer",
+          "permissions": "mod"
+        },
+        "!subathonStartHappyHour": {
+          "description": "Start a happy hour multiplier",
+          "permissions": "mod"
+        },
+        "!subathonRemoveTime": {
+          "description": "Remove time from subathon (mod)",
+          "permissions": "mod"
+        }
+      }
+    },
+    "TRIVIA QUIZ": {
+      "icon": "🧠",
+      "title": "",
+      "commands": {
+        "!triviagameleaderboard": {
+          "description": "check leaderboard for the quiz",
+          "permissions": ""
+        },
+        "!starttrivia": {
+          "description": "start trivia game",
+          "permissions": ""
+        },
+        "!forceendtrivia": {
+          "description": "end (mod)",
+          "permissions": "mod"
+        },
+        "!triviagamestats": {
+          "description": "get your own personal game stats",
+          "permissions": ""
+        },
+        "!stoptrivia": {
+          "description": "end (mod)",
+          "permissions": "mod"
+        },
+        "!skiptrivia": {
+          "description": "skip (mod)",
+          "permissions": "mod"
+        }
+      }
+    },
+    "GIVEAWAY": {
+      "icon": "🎉",
+      "title": "",
+      "commands": {
+        "!createGiveaway": {
+          "description": "Start a new giveaway (mod)",
+          "permissions": "mod"
+        },
+        "!clearGiveaway": {
+          "description": "Remove all entries and reset giveaway",
+          "permissions": "mod"
+        },
+        "!giveaway": {
+          "description": "Show current giveaway info",
+          "permissions": ""
+        },
+        "!unlockGiveaway": {
+          "description": "Allow new entries again",
+          "permissions": ""
+        },
+        "!pickWinner": {
+          "description": "Manually select a giveaway winner",
+          "permissions": ""
+        },
+        "!enter": {
+          "description": "Join the current giveaway",
+          "permissions": ""
+        },
+        "!endGiveaway": {
+          "description": "End giveaway and pick winner(s)",
+          "permissions": ""
+        },
+        "!cancelGiveaway": {
+          "description": "Cancel the active giveaway",
+          "permissions": ""
+        },
+        "!lockGiveaway": {
+          "description": "Prevent new entries",
+          "permissions": ""
+        }
+      }
+    },
+    "DYNAMIC TIMERS": {
+      "icon": "",
+      "title": "",
+      "commands": {
+        "!removeTimer": {
+          "description": "Delete a timer completely",
+          "permissions": "mod"
+        },
+        "!timerPause": {
+          "description": "Pause a running timer",
+          "permissions": "mod"
+        },
+        "!timeAdd": {
+          "description": "Add time to an active timer",
+          "permissions": "mod"
+        },
+        "!resumeTimer": {
+          "description": "Resume a paused timer",
+          "permissions": "mod"
+        },
+        "!removeTime": {
+          "description": "Remove time from a timer",
+          "permissions": "mod"
+        }
+      }
+    },
+    "MAIN COMMANDS": {
+      "icon": "「 ✦ 」",
+      "title": "",
+      "commands": {
+        "!setgame": {
+          "description": "Change the playing game (legacy)",
+          "permissions": "mod"
+        },
+        "!russianroulette": {
+          "description": "Play a fun Russian roulette game",
+          "permissions": ""
+        },
+        "!settitle": {
+          "description": "Update stream title (alias)",
+          "permissions": "mod"
+        },
+        "!clip": {
+          "description": "Create or show recent Twitch clip",
+          "permissions": ""
+        },
+        "!accountage": {
+          "description": "Show account creation date",
+          "permissions": ""
+        },
+        "!time": {
+          "description": "Show current local time",
+          "permissions": ""
+        },
+        "!8ball": {
+          "description": "Ask the magic 8-ball a question",
+          "permissions": ""
+        },
+        "!sacrifice": {
+          "description": "Sacrifice something for fun/points",
+          "permissions": ""
+        },
+        "!flipcoin": {
+          "description": "Flip a coin (heads/tails)",
+          "permissions": ""
+        },
+        "!followage": {
+          "description": "Show how long someone has followed",
+          "permissions": ""
+        },
+        "!shoutout": {
+          "description": "Give a shoutout (alias)",
+          "permissions": "mod"
+        },
+        "!fortune": {
+          "description": "Get a random fortune/cookie message",
+          "permissions": ""
+        },
+        "!uptime": {
+          "description": "Show how long the stream has been live",
+          "permissions": ""
+        },
+        "!translate": {
+          "description": "Translate text (alias)",
+          "permissions": ""
+        },
+        "!lurk": {
+          "description": "Announce you're lurking (alias)",
+          "permissions": ""
+        },
+        "!urban": {
+          "description": "Look up a word on Urban Dictionary",
+          "permissions": ""
+        },
+        "!evohelp": {
+          "description": "Show help for evolution/game commands",
+          "permissions": ""
+        },
+        "!scene": {
+          "description": "Switch OBS scene (alias)",
+          "permissions": "mod"
+        }
+      }
+    },
+    "USER INVENTORY": {
+      "icon": "💼",
+      "title": "",
+      "commands": {
+        "!buyItem": {
+          "description": "Buy an item from the shop",
+          "permissions": ""
+        },
+        "!craft": {
+          "description": "Craft an item using materials",
+          "permissions": ""
+        },
+        "!itemValue": {
+          "description": "Check the value/price of an item",
+          "permissions": ""
+        },
+        "!checkOffers": {
+          "description": "View pending trade offers",
+          "permissions": ""
+        },
+        "!sellItem": {
+          "description": "Sell an item from your inventory",
+          "permissions": ""
+        },
+        "!itemList": {
+          "description": "List all available items",
+          "permissions": ""
+        },
+        "!itemLimit": {
+          "description": "Check inventory slot limit or usage",
+          "permissions": ""
+        },
+        "!inventory": {
+          "description": "Show your current inventory",
+          "permissions": ""
+        },
+        "!recipe": {
+          "description": "View crafting recipe for an item",
+          "permissions": ""
+        },
+        "!removeItem": {
+          "description": "Remove an item (admin/mod)",
+          "permissions": "mod"
+        },
+        "!rejectTrade": {
+          "description": "Decline a trade offer",
+          "permissions": ""
+        },
+        "!trade": {
+          "description": "Start a trade with another user",
+          "permissions": ""
+        },
+        "!itemDescription": {
+          "description": "Show detailed info about an item",
+          "permissions": ""
+        },
+        "!useItem": {
+          "description": "Use or consume an item",
+          "permissions": ""
+        },
+        "!acceptTrade": {
+          "description": "Accept a pending trade offer",
+          "permissions": ""
+        },
+        "!addItem": {
+          "description": "Add item to someone's inventory (mod)",
+          "permissions": "mod"
+        }
+      }
+    },
+    "RAFFLE": {
+      "icon": "🎟️",
+      "title": "",
+      "commands": {
+        "!rafflePickWinner": {
+          "description": "Choose raffle winner(s)",
+          "permissions": "mod"
+        },
+        "!raffleCancel": {
+          "description": "Cancel active raffle",
+          "permissions": "mod"
+        },
+        "!raffleLock": {
+          "description": "Prevent new entries",
+          "permissions": "mod"
+        },
+        "!raffleUnlock": {
+          "description": "Allow new raffle entries",
+          "permissions": "mod"
+        },
+        "!raffle": {
+          "description": "Show current raffle status",
+          "permissions": ""
+        },
+        "!enter": {
+          "description": "Join the current raffle",
+          "permissions": ""
+        },
+        "!raffleStart": {
+          "description": "Begin a new raffle",
+          "permissions": "mod"
+        },
+        "!raffleDelete": {
+          "description": "Delete the raffle (mod)",
+          "permissions": "mod"
+        }
+      }
+    },
+    "TEMPORARY VIP": {
+      "icon": "💎",
+      "title": "",
+      "commands": {
+        "!vipCheck": {
+          "description": "Check VIP status & expiration",
+          "permissions": ""
+        },
+        "!vipAdd": {
+          "description": "Grant temporary VIP status",
+          "permissions": "mod"
+        },
+        "!vipRemove": {
+          "description": "Remove someone's temp VIP",
+          "permissions": "mod"
+        },
+        "!refreshVip": {
+          "description": "Refresh/renew temporary VIP status",
+          "permissions": "mod"
+        }
+      }
+    },
+    "Zelda Ocarina": {
+      "icon": "🗡️",
+      "title": "",
+      "commands": {
+        "!zreset": {
+          "description": "Reset your Zelda Ocarina progress",
+          "permissions": ""
+        },
+        "!zeldaStats": {
+          "description": "View your Zelda Ocarina stats",
+          "permissions": ""
+        },
+        "!zeldaHelp": {
+          "description": "Show Zelda Ocarina command help",
+          "permissions": ""
+        }
+      }
+    },
+    "LURKS & SB": {
+      "icon": "👀",
+      "title": "Lurking",
+      "commands": {
+        "!lurkers": {
+          "description": "List currently lurking viewers",
+          "permissions": ""
+        },
+        "!lurkLeaderboard": {
+          "description": "Show top lurkers leaderboard",
+          "permissions": ""
+        },
+        "!unlurk": {
+          "description": "Mark yourself as no longer lurking",
+          "permissions": ""
+        },
+        "!lurkStats": {
+          "description": "Show your personal lurk statistics",
+          "permissions": ""
+        },
+        "!lurk": {
+          "description": "Announce that you're lurking",
+          "permissions": ""
+        }
+      }
+    },
+    "[pwn] Per Game DeathCounter (Single)": {
+      "icon": "",
+      "title": "",
+      "commands": {
+        "!death-": {
+          "description": "",
+          "permissions": "mod"
+        },
+        "!deaths": {
+          "description": "",
+          "permissions": ""
+        },
+        "!deathset": {
+          "description": "",
+          "permissions": "mod"
+        },
+        "!deathgame+": {
+          "description": "",
+          "permissions": "mod"
+        },
+        "!deathboard": {
+          "description": "",
+          "permissions": ""
+        },
+        "!deathgame-": {
+          "description": "",
+          "permissions": "mod"
+        },
+        "!totaldeaths": {
+          "description": "",
+          "permissions": ""
+        },
+        "!death+": {
+          "description": "",
+          "permissions": "mod"
+        }
+      }
+    },
+    "Hot Potato": {
+      "icon": "🥔",
+      "title": "",
+      "commands": {
+        "!hotpotato start": {
+          "description": "Begin a hot potato game",
+          "permissions": ""
+        },
+        "!hotpotato exclude": {
+          "description": "Exclude yourself from hot potato",
+          "permissions": ""
+        },
+        "!pass": {
+          "description": "Pass the hot potato to someone",
+          "permissions": ""
+        }
+      }
+    },
+    "QUICK MATHS": {
+      "icon": "🤓",
+      "title": "",
+      "commands": {
+        "!quickmaths": {
+          "description": "Start a quick maths mini-game",
+          "permissions": ""
+        }
+      }
+    },
+    "GIPHY & SB": {
+      "icon": "📸",
+      "title": "GIF COMMANDS",
+      "commands": {
+        "!gif": {
+          "description": "Search and post a random GIF",
+          "permissions": ""
+        }
+      }
+    },
+    "TWITCH WATCHTIME": {
+      "icon": "⏱",
+      "title": "",
+      "commands": {
+        "!watchtime": {
+          "description": "Show your total watch time",
+          "permissions": ""
+        },
+        "!watchtimeLeaderboard": {
+          "description": "Top watchers leaderboard",
+          "permissions": ""
+        }
+      }
+    }
+  }
+}

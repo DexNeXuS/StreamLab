@@ -1,0 +1,155 @@
+{
+  "widgets": [
+    {
+      "id": "twitch-obs",
+      "name": "OBS Studio",
+      "description": "Scenes, sources, browser sources, and all the visuals. This is where the stream picture comes from — overlays, game capture, and the HTML widgets I run as browser sources.",
+      "image": "twitch-obs.png",
+      "page": "obs",
+      "showOnTwitch": true,
+      "actions": ["page"],
+      "buttonLabel": "OBS resources"
+    },
+    {
+      "id": "twitch-streamelements",
+      "name": "StreamElements",
+      "description": "Overlays, loyalty, alerts, and the bits that plug into Twitch. I use it alongside my own HTML widgets and Streamer.bot so everything stays in sync.",
+      "image": "twitch-streamelements.png",
+      "page": "streamelements",
+      "showOnTwitch": true,
+      "actions": ["page"],
+      "buttonLabel": "StreamElements"
+    },
+    {
+      "id": "twitch-streamerbot",
+      "name": "Streamer.bot",
+      "description": "Chat commands, channel point actions, and automation. The brain behind custom logic — from simple triggers to full workflows. All my actions and imports live here.",
+      "image": "twitch-streamerbot.png",
+      "page": "streamerbot",
+      "showOnTwitch": true,
+      "actions": ["page"],
+      "buttonLabel": "Actions & imports"
+    },
+    {
+      "id": "twitch-touch-portal",
+      "name": "Touch Portal",
+      "description": "One-tap control from my phone or tablet: scene switches, Streamer.bot actions, and shortcuts. No need to alt-tab — everything is a button away.",
+      "image": "twitch-touch-portal.png",
+      "page": "touch-portal",
+      "showOnTwitch": true,
+      "actions": ["page"],
+      "buttonLabel": "Touch Portal"
+    },
+    {
+      "id": "twitch-voicemeeter",
+      "name": "VoiceMeeter",
+      "description": "Audio routing and mixing so game, music, mic, and alerts all land in the right place. Virtual cables and strips so the stream hears exactly what I want.",
+      "image": "twitch-voicemeeter.png",
+      "page": "voicemeeter",
+      "showOnTwitch": true,
+      "actions": ["page"],
+      "buttonLabel": "VoiceMeeter setup"
+    },
+    {
+      "id": "twitch-voicemod",
+      "name": "VoiceMod",
+      "description": "Voice effects and real-time modulation. When I want to sound different on stream — or just a bit more fun — VoiceMod is in the chain.",
+      "image": "twitch-voicemod.png",
+      "page": "voicemod",
+      "showOnTwitch": true,
+      "actions": ["page"],
+      "buttonLabel": "VoiceMod setup"
+    },
+    {
+      "id": "twitch-html-widgets",
+      "name": "Custom HTML widgets",
+      "description": "Stuff I build myself: overlays, mini-apps, and browser sources that talk to Streamer.bot and OBS. King-Queen, Rocksmith, and whatever I ship next.",
+      "image": "twitch-html-widgets.png",
+      "page": "html-widgets",
+      "showOnTwitch": true,
+      "actions": ["page"],
+      "buttonLabel": "HTML Widgets"
+    },
+    {
+      "id": "twitch-commands",
+      "name": "Commands & inventory",
+      "description": "Every chat command, grouped by feature. Nexi, USER INVENTORY, mod tools, raffles, and more. The full DexNeXuS Inventory catalog is at the bottom of that page.",
+      "image": "twitch-commands.png",
+      "page": "commands",
+      "showOnTwitch": true,
+      "actions": ["page"],
+      "buttonLabel": "Open Commands"
+    },
+    {
+      "id": "twitch-rota",
+      "name": "Streaming rota",
+      "description": "When I'm next live — current time, next stream, and the week ahead. Game streams, music streams, and the schedule I actually follow.",
+      "image": "twitch-rota.png",
+      "page": "streaming-rota",
+      "showOnTwitch": true,
+      "actions": ["page"],
+      "buttonLabel": "Open Rota"
+    },
+    {
+      "id": "simple-clock",
+      "name": "Simple Clock",
+      "description": "Minimal HH:MM:SS clock. Copy URL into OBS Browser Source or download and run locally.",
+      "image": "simple-clock.png",
+      "file": "simple-clock.html",
+      "showOnDiscover": true,
+      "actions": ["open", "download", "copyUrl"]
+    },
+    {
+      "id": "hello-text",
+      "name": "Hello Text",
+      "description": "Static text in a soft card. Copy URL for OBS, or download and edit the HTML to change the copy.",
+      "image": "hello-text.png",
+      "file": "hello-text.html",
+      "actions": ["open", "download", "copyUrl"]
+    },
+    {
+      "id": "countdown",
+      "name": "Countdown",
+      "description": "MM:SS countdown (e.g. starting soon). Copy URL or download and edit the target time in the script. How to explains how.",
+      "image": "countdown.png",
+      "file": "countdown.html",
+      "showOnDiscover": true,
+      "actions": ["open", "download", "copyUrl"],
+      "howtoFile": "countdown.md"
+    },
+    {
+      "id": "date-display",
+      "name": "Date Display",
+      "description": "Today's date (e.g. Wed, 12 Feb 2025). Copy URL or download and edit the HTML for locale/format.",
+      "image": "date-display.png",
+      "file": "date-display.html",
+      "actions": ["open", "download", "copyUrl"]
+    },
+    {
+      "id": "fade-text",
+      "name": "Fade Text",
+      "description": "Text with a gentle pulsing fade. Copy URL or download and edit the HTML for your message.",
+      "image": "fade-text.png",
+      "file": "fade-text.html",
+      "actions": ["open", "download", "copyUrl"]
+    },
+    {
+      "id": "typewriter",
+      "name": "Typewriter / text effects",
+      "description": "Cycling text with typewriter, word-by-word, or reveal effects. Use as a loading screen or rotating messages. Customise via URL: effect, lines (comma-separated), interval, typing_speed. No editing required.",
+      "image": "viewer-placeholder.png",
+      "file": "typewriter.html",
+      "showOnDiscover": true,
+      "actions": ["open", "download", "copyUrl"],
+      "howtoFile": "typewriter.md"
+    },
+    {
+      "id": "viewer-placeholder",
+      "name": "Viewer Placeholder",
+      "description": "Static '0 viewers' placeholder. Copy URL or download; replace with your own API call for live count.",
+      "image": "viewer-placeholder.png",
+      "file": "viewer-placeholder.html",
+      "actions": ["open", "download", "copyUrl"]
+    }
+  ]
+}

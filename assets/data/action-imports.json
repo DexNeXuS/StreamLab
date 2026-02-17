@@ -1,0 +1,50 @@
+[
+  {
+    "id": "king-queen",
+    "name": "King-Queen overlay ping",
+    "file": "streamerbot/action-imports/king-queen.txt",
+    "description": "Streamer.bot action to send WebSocket ping to the King-Queen overlay.",
+    "pageSlug": "king-queen"
+  },
+  {
+    "id": "ollama",
+    "name": "Ollama (Run with INI)",
+    "file": "streamerbot/action-imports/ollama.txt",
+    "description": "Streamer.bot action for Ollama chat replies; config via ollama.ini.",
+    "pageSlug": "ollama"
+  },
+  {
+    "id": "flash-sale",
+    "name": "Flash Sale",
+    "file": "streamerbot/action-imports/flash-sale.txt",
+    "description": "Turn any channel point reward into a timed flash sale (percentOff, saleTimer, cpPrice, fairPrice).",
+    "pageSlug": "flash-sale"
+  },
+  {
+    "id": "cmd-ctrl",
+    "name": "CMD CTRL",
+    "file": "streamerbot/action-imports/cmd-ctrl.txt",
+    "description": "Enable/disable rewards, commands, command groups, timers, or actions by id/name. Great with Touch Portal.",
+    "pageSlug": "cmd-ctrl"
+  },
+  {
+    "id": "get-commands",
+    "name": "Get Commands",
+    "file": "streamerbot/action-imports/get-commands-run.txt",
+    "description": "Export commands to JSON (Make JSON) and post command list to chat (Run). One plugin; custom icon/title, descriptions, mod-only filter.",
+    "pageSlug": "get-commands"
+  },
+  {
+    "id": "random-media-from-folder",
+    "name": "Random Media From Folder",
+    "file": "streamerbot/action-imports/random-media-from-folder.txt",
+    "description": "Pick a random file (video, image, music, or text) from a folder; outputs full path in randomFile.",
+    "pageSlug": "random-media-from-folder"
+  },
+  {
+    "id": "example",
+    "name": "Example action",
+    "file": "streamerbot/action-imports/example.txt",
+    "description": "Add your Streamer.bot action import files to the streamerbot/action-imports folder and list them here."
+  }
+]

@@ -1,0 +1,59 @@
+/* Search results list + nav panel responsive + reduced-motion */
+
+/* Search overlay results */
+.dx-search-results {
+  margin-top: 12px;
+  max-height: 60vh;
+  overflow: auto;
+  display: grid;
+  gap: 4px;
+}
+
+.dx-search-result-link {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--dx-text);
+  font-weight: 500;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.dx-search-result-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dx-search-result-link small {
+  display: block;
+  color: var(--dx-text-3);
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+/* Make the nav panel act like a dropdown on desktop, but full-width-ish on small screens */
+@media (max-width: 680px) {
+  .dx-nav-panel {
+    position: fixed;
+    left: 18px;
+    right: 18px;
+    top: 76px;
+    width: auto;
+    max-height: calc(100vh - 100px);
+    overflow: auto;
+  }
+  .dx-toast-host {
+    right: 12px;
+    left: 12px;
+    bottom: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
+

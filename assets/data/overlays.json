@@ -1,0 +1,18 @@
+{
+  "overlays": [
+    {
+      "id": "king-queen",
+      "name": "King-Queen",
+      "file": "king-queen/index.html",
+      "description": "King & Queen panel overlay; use with Streamer.bot WebSocket ping action.",
+      "pageSlug": "king-queen"
+    },
+    {
+      "id": "rocksmith",
+      "name": "Rocksmith",
+      "file": "rocksmith/index.html",
+      "description": "Rocksniffer + Rocksmith 2014: current song and live stats. Streamer.bot optional.",
+      "pageSlug": "rocksmith"
+    }
+  ]
+}

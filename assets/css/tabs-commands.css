@@ -1,0 +1,172 @@
+/* Tabs, tabpanel, command catalog */
+
+/* Tabs */
+.dx-tabs {
+  margin-top: 14px;
+}
+
+.dx-tablist {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 10px;
+  border-radius: var(--dx-radius);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.dx-tab {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--dx-text);
+  padding: 10px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  transition: background 120ms ease-out, border-color 120ms ease-out, transform 100ms ease-out;
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+.dx-tab:hover {
+  background: rgba(255, 255, 255, 0.09);
+  transform: translateY(-1px);
+}
+.dx-tab:active {
+  transform: translateY(0);
+}
+.dx-tab:focus-visible {
+  outline: 2px solid rgba(139, 92, 246, 0.9);
+  outline-offset: 2px;
+}
+
+.dx-tab[aria-selected="true"] {
+  border-color: rgba(139, 92, 246, 0.55);
+  background: rgba(139, 92, 246, 0.16);
+}
+
+.dx-tabpanel {
+  margin-top: 12px;
+}
+
+.dx-tabpanel[hidden] {
+  display: none !important;
+}
+
+/* Permission filter (All / Viewer / Mod) */
+.dx-command-permission-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+  padding: 8px 0;
+}
+
+.dx-command-filter-label {
+  font-size: 13px;
+  color: var(--dx-text-2);
+  margin-right: 4px;
+}
+
+.dx-command-filter-btn {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--dx-text);
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 120ms ease-out, border-color 120ms ease-out;
+}
+
+.dx-command-filter-btn:hover {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.dx-command-filter-btn:focus-visible {
+  outline: 2px solid rgba(139, 92, 246, 0.9);
+  outline-offset: 2px;
+}
+
+.dx-command-filter-btn.dx-command-filter-btn--active {
+  border-color: rgba(139, 92, 246, 0.55);
+  background: rgba(139, 92, 246, 0.16);
+}
+
+/* Command catalog */
+.dx-command-toolbar {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.dx-command-search {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  color: var(--dx-text);
+  padding: 10px 12px;
+}
+
+.dx-command-search::placeholder {
+  color: rgba(245, 247, 255, 0.45);
+}
+
+.dx-command-list {
+  margin-top: 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.dx-command-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+@media (min-width: 780px) {
+  .dx-command-row {
+    grid-template-columns: 240px 1fr 140px;
+    align-items: center;
+  }
+}
+
+.dx-command-name {
+  font-family: var(--dx-mono);
+  font-size: 13px;
+  color: rgba(245, 247, 255, 0.92);
+  overflow-wrap: anywhere;
+}
+
+.dx-command-desc {
+  color: var(--dx-text-2);
+  line-height: 1.5;
+}
+
+.dx-command-meta {
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 780px) {
+  .dx-command-meta {
+    justify-content: flex-end;
+  }
+}
+

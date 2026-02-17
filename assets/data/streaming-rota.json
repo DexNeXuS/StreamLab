@@ -1,0 +1,17 @@
+{
+  "description": "Edit this file to change your stream schedule. Recurring entries run every week (dayOfWeek: 0=Sun, 1=Mon, 2=Tue, 3=Wed, 4=Thu, 5=Fri, 6=Sat). Overrides use YYYY-MM-DD keys; cancelled is an array of YYYY-MM-DD dates with no stream.",
+  "recurring": [
+    {
+      "dayOfWeek": 3,
+      "label": "Game stream",
+      "time": "19:00"
+    },
+    {
+      "dayOfWeek": 5,
+      "label": "Music stream",
+      "time": "19:00"
+    }
+  ],
+  "overrides": {},
+  "cancelled": []
+}

@@ -1,0 +1,305 @@
+/* Main, loading, content, cards, grid, page hero, badges */
+
+.dx-main {
+  padding: 22px 0 58px;
+}
+
+.dx-loading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--dx-radius);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.04);
+  margin: 12px 0 16px;
+}
+
+/* Ensure hidden truly hides (some CSS can override UA styles). */
+.dx-loading[hidden] {
+  display: none !important;
+}
+
+.dx-spinner {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.20);
+  border-top: 2px solid rgba(139, 92, 246, 0.9);
+  animation: dxspin 0.9s linear infinite;
+}
+@keyframes dxspin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.dx-content {
+  min-height: 50vh;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.32s ease, transform 0.32s ease;
+}
+
+.dx-content.dx-content--entering {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.dx-content h1,
+.dx-content h2,
+.dx-content h3 {
+  letter-spacing: -0.03em;
+  margin: 0 0 10px;
+}
+.dx-content h1 {
+  font-size: clamp(26px, 3vw, 38px);
+}
+.dx-content h2 {
+  font-size: clamp(20px, 2.2vw, 28px);
+  margin-top: 28px;
+}
+.dx-content p {
+  color: var(--dx-text-2);
+  line-height: 1.7;
+}
+.dx-content code {
+  font-family: var(--dx-mono);
+}
+.dx-content pre {
+  overflow: auto;
+  padding: 14px 14px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: var(--dx-radius);
+}
+
+.dx-card {
+  border-radius: var(--dx-radius);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.25);
+  padding: 18px 18px;
+  transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.5s ease, border-color 0.3s ease;
+}
+
+/* Content spacing utilities (replace ad-hoc inline margins) */
+.dx-card + .dx-card {
+  margin-top: 1.25rem;
+}
+.dx-content .dx-card h1:first-child,
+.dx-content .dx-card h2:first-child,
+.dx-content .dx-card h3:first-child {
+  margin-top: 0;
+}
+.dx-heading-reset {
+  margin-top: 0;
+}
+.dx-mt-1 { margin-top: 10px; }
+.dx-mt-2 { margin-top: 14px; }
+.dx-mt-3 { margin-top: 20px; }
+.dx-mt-4 { margin-top: 24px; }
+.dx-mb-1 { margin-bottom: 14px; }
+.dx-mb-2 { margin-bottom: 18px; }
+.dx-flex-wrap { display: flex; gap: 10px; flex-wrap: wrap; }
+.dx-content-lead {
+  margin: 0 0 14px;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--dx-text-2);
+}
+.dx-content-list {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--dx-text-2);
+  line-height: 1.85;
+  font-size: 0.98rem;
+}
+.dx-header-tagline {
+  display: none;
+  font-size: 0.8rem;
+  color: var(--dx-text-2);
+  margin: 2px 0 0;
+  font-weight: 400;
+}
+@media (min-width: 869px) {
+  .dx-header-tagline { display: block; }
+}
+
+/* Card with image left, text right */
+.dx-card--img-row {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.dx-card-img-col .dx-content-img-container {
+  width: 100%;
+  min-width: 0;
+}
+@media (min-width: 640px) {
+  .dx-card--img-row {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .dx-card-img-col {
+    flex-shrink: 0;
+    width: 340px;
+  }
+  .dx-card-img-col .dx-content-img-container {
+    width: 340px;
+  }
+  .dx-card-text-col {
+    flex: 1;
+    min-width: 0;
+  }
+}
+.dx-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 25px -5px rgb(139 92 246 / 0.2), 0 0 0 1px rgb(139 92 246 / 0.12);
+}
+.dx-card:has(.dx-discover-grid):hover {
+  transform: none;
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.25);
+}
+
+.dx-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 14px;
+}
+.dx-col-4 {
+  grid-column: span 4;
+}
+.dx-col-6 {
+  grid-column: span 6;
+}
+.dx-col-12 {
+  grid-column: span 12;
+}
+@media (max-width: 860px) {
+  .dx-col-4,
+  .dx-col-6 {
+    grid-column: span 12;
+  }
+}
+
+/* Hero image at top of a card (first section on a page).
+   Width is always 100% of the card; height follows the image — a shorter image
+   gives a shorter box, so you can use any aspect ratio. Optional max-height
+   caps very tall images so one doesn’t dominate the page. */
+.dx-card .dx-page-hero-wrap {
+  width: 100%;
+  margin: -18px -18px 18px -18px;
+  border-radius: var(--dx-radius) var(--dx-radius) 0 0;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(96, 165, 250, 0.1));
+}
+.dx-card .dx-page-hero-wrap .dx-page-card-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  vertical-align: bottom;
+  max-height: 70vh;
+  object-fit: contain;
+  object-position: top center;
+}
+
+/* Page cards with image on top (e.g. Twitch setup).
+   Images are not fixed height — they scale with aspect ratio, capped so they don't dominate. */
+.dx-page-card {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.dx-page-card .dx-page-card-img-wrap {
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(96, 165, 250, 0.1));
+}
+.dx-page-card .dx-page-card-img-wrap .dx-page-card-img {
+  width: 100%;
+  height: auto;
+  max-height: 280px;
+  object-fit: contain;
+  object-position: top center;
+  display: block;
+}
+.dx-page-card .dx-page-card-img {
+  width: 100%;
+  height: auto;
+  max-height: 280px;
+  object-fit: contain;
+  display: block;
+}
+
+/* In-content images (screenshots etc.) — smaller, avoid excessive scrolling */
+.dx-content-img-container {
+  max-width: 380px;
+}
+.dx-content-img-wrap {
+  max-width: 340px;
+  border-radius: var(--dx-radius);
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(96, 165, 250, 0.06));
+  margin: 10px 0;
+}
+.dx-content-img-wrap img,
+.dx-content-img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+  display: block;
+}
+.dx-page-card .dx-page-card-body {
+  padding: 16px 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.dx-page-card .dx-page-card-body h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+.dx-page-card .dx-page-card-body p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--dx-text-2);
+  line-height: 1.5;
+  flex: 1;
+}
+.dx-page-card .dx-page-card-body .dx-btn {
+  align-self: flex-start;
+  margin-top: 4px;
+}
+
+.dx-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--dx-text-2);
+  font-size: 12px;
+}
+.dx-badge--purple {
+  border-color: rgba(139, 92, 246, 0.35);
+  background: rgba(139, 92, 246, 0.14);
+}
+.dx-badge--blue {
+  border-color: rgba(96, 165, 250, 0.35);
+  background: rgba(96, 165, 250, 0.14);
+}
+.dx-badge--green {
+  border-color: rgba(52, 211, 153, 0.35);
+  background: rgba(52, 211, 153, 0.12);
+}
+.dx-badge--yellow {
+  border-color: rgba(251, 191, 36, 0.35);
+  background: rgba(251, 191, 36, 0.12);
+}
+

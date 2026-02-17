@@ -1,0 +1,18 @@
+{
+  "pages": [
+    {
+      "id": "main",
+      "name": "Main Layout",
+      "description": "Primary Touch Portal page with scene controls and core buttons.",
+      "file": null
+    }
+  ],
+  "buttons": [
+    {
+      "id": "get-commands",
+      "name": "Get Commands",
+      "description": "Export and post Streamer.bot commands to chat via JSON.",
+      "file": "get-commands-touch-portal-button.tpb"
+    }
+  ]
+}

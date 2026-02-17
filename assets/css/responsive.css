@@ -1,0 +1,146 @@
+/* Mobile & tablet: overflow, touch targets, spacing, readable layout */
+
+/* Prevent horizontal scroll and allow flex/grid children to shrink */
+html {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  overflow-x: hidden;
+  min-width: 0;
+}
+
+/* Allow long URLs and text to wrap instead of overflowing */
+.dx-content {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Slightly more padding on very small screens so content doesn’t touch edges */
+@media (max-width: 380px) {
+  .dx-container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
+
+/* Main content: comfortable vertical padding on mobile */
+@media (max-width: 768px) {
+  .dx-main {
+    padding-top: 16px;
+    padding-bottom: 40px;
+  }
+}
+
+/* Prevent iOS zoom on input focus (font-size at least 16px) */
+@media (max-width: 768px) {
+  .dx-input,
+  .dx-search-overlay .dx-input,
+  .dx-nav-panel .dx-input {
+    font-size: 16px;
+  }
+}
+
+/* Touch-friendly tap targets (min ~44px) for header controls and nav */
+@media (max-width: 868px) {
+  .dx-icon-btn {
+    min-width: 44px;
+    min-height: 44px;
+    width: 44px;
+    height: 44px;
+  }
+  .dx-nav-toggle {
+    min-height: 44px;
+    padding: 12px 14px;
+  }
+  .dx-search-close {
+    min-width: 44px;
+    min-height: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* Search overlay: safe area on notched devices and small screens */
+@media (max-width: 768px) {
+  .dx-search-overlay {
+    padding-top: max(80px, env(safe-area-inset-top, 0px) + 60px);
+    padding-left: max(18px, env(safe-area-inset-left, 0px));
+    padding-right: max(18px, env(safe-area-inset-right, 0px));
+  }
+}
+
+/* Cards: reduce padding on narrow screens so more space for content */
+@media (max-width: 560px) {
+  .dx-card {
+    padding: 14px 14px;
+  }
+  .dx-card .dx-page-hero-wrap {
+    margin: -14px -14px 14px -14px;
+  }
+}
+
+/* Game detail: video and content full width on small screens */
+@media (max-width: 640px) {
+  .dx-game-video-wrap {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .dx-game-detail-header {
+    gap: 12px;
+  }
+  .dx-game-cover {
+    width: 80px;
+  }
+}
+
+/* Scrollable code/pre and tables: smooth scroll on touch devices */
+.dx-content pre,
+.dx-content .dx-copy-box,
+[style*="overflow: auto"],
+[style*="overflow-x: auto"] {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Footer: stack or wrap nicely; extra padding on small screens */
+@media (max-width: 560px) {
+  .dx-footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 0;
+  }
+  .dx-footer-links {
+    gap: 12px;
+  }
+  .dx-footer-links .dx-link {
+    padding: 6px 0;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* Ensure in-content images don’t overflow; iframes are inside aspect-ratio wrappers */
+.dx-content img,
+.dx-content-img-wrap img {
+  max-width: 100%;
+  height: auto;
+}
+.dx-content iframe,
+.dx-game-video {
+  max-width: 100%;
+  display: block;
+}
+
+/* Discover and card grids: smaller min column on very narrow screens */
+@media (max-width: 360px) {
+  .dx-discover-grid {
+    grid-template-columns: 1fr;
+  }
+  .dx-widget-cards,
+  .dx-inventory-cards,
+  .dx-mentions-grid {
+    grid-template-columns: 1fr;
+  }
+}

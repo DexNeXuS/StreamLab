@@ -1,0 +1,14 @@
+{
+  "baseUrl": "",
+  "links": [
+    { "label": "GitHub", "href": "https://github.com/DexNeXuS", "icon": "simple-icons:github" },
+    { "label": "Twitch", "href": "https://www.twitch.tv/dexnexus", "icon": "simple-icons:twitch" },
+    { "label": "YouTube", "href": "https://youtube.com/dexnexus1", "icon": "simple-icons:youtube" },
+    { "label": "Discord", "href": "https://discord.gg/NswvnCs236", "icon": "simple-icons:discord" },
+    { "label": "TikTok", "href": "https://www.tiktok.com/@dexnexus", "icon": "simple-icons:tiktok" },
+    { "label": "Instagram", "href": "https://www.instagram.com/dexnexus/", "icon": "simple-icons:instagram" },
+    { "label": "Twitter/X", "href": "https://twitter.com/dexnexus", "icon": "simple-icons:x" },
+    { "label": "BlueSky", "href": "https://bsky.app/profile/dexnexus.bsky.social", "icon": "simple-icons:bluesky" },
+    { "label": "DexNeXuS HUB", "href": "https://dexnexus.co.uk", "icon": "mdi:home" }
+  ]
+} 

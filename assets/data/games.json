@@ -1,0 +1,121 @@
+{
+  "description": "Games played — name, dates, rating, description, links, trailer. Link to streaming rota via rotaDay if desired.",
+  "games": [
+    {
+      "id": "rocksmith",
+      "name": "Rocksmith",
+      "description": "Guitar learning game.",
+      "review": "Guitar learning game I keep coming back to. Great for learning songs and techniques with real guitar; the session mode and arcade minigames are fun for stream.",
+      "rating": 5,
+      "dateStarted": "2024-01-15",
+      "dateCompleted": null,
+      "links": [
+        { "label": "Rocksmith README overlay", "url": "?page=rocksmith" }
+      ],
+      "youtubeVideoId": "_qEP4lC3E1k",
+      "image": "rocksmith.png",
+      "platform": "PC",
+      "genre": "Rhythm / Music",
+      "tags": ["music", "guitar", "stream"],
+      "status": "playing",
+      "rotaDay": "Friday"
+    },
+    {
+      "id": "borderlands-3",
+      "name": "Borderlands 3",
+      "description": "Looter shooter with co-op and humour.",
+      "review": "Borderlands 3 keeps the series' over-the-top style and gunplay. Great for co-op, tons of weapons and builds, and the humour lands if you're into that. Endgame can feel grindy but the journey is a blast.",
+      "rating": 5,
+      "dateStarted": "2024-06-01",
+      "dateCompleted": null,
+      "links": [],
+      "youtubeVideoId": "gjLQ2Uj4OPw",
+      "platform": "PC",
+      "genre": "FPS / Looter shooter",
+      "tags": ["co-op", "fps", "stream"],
+      "status": "playing",
+      "image": "borderlands-3.png"
+    },
+    {
+      "id": "borderlands-4",
+      "name": "Borderlands 4",
+      "description": "Latest Borderlands with new worlds and mayhem.",
+      "review": "Borderlands 4 doubles down on chaos and variety. New characters and planets keep it fresh; gunplay and co-op are as fun as ever. Solid pick if you loved the previous games.",
+      "rating": 5,
+      "dateStarted": "2025-01-01",
+      "dateCompleted": null,
+      "links": [],
+      "youtubeVideoId": "NtSRtcXcCnk",
+      "platform": "PC",
+      "genre": "FPS / Looter shooter",
+      "tags": ["co-op", "fps", "stream"],
+      "status": "playing",
+      "image": "borderlands-4.png"
+    },
+    {
+      "id": "it-takes-two",
+      "name": "It Takes Two",
+      "description": "Co-op adventure built for two.",
+      "review": "It Takes Two is one of the best co-op games out there. Clever level design, constant variety, and it really does need two players — perfect for stream with a friend. Heartwarming story and no dull moments.",
+      "rating": 5,
+      "dateStarted": "2024-03-01",
+      "dateCompleted": "2024-05-01",
+      "links": [],
+      "youtubeVideoId": "GAWHzGNcTEw",
+      "platform": "PC",
+      "genre": "Co-op / Adventure",
+      "tags": ["co-op", "platformer", "stream"],
+      "status": "completed",
+      "image": "it-takes-two.png"
+    },
+    {
+      "id": "call-of-duty",
+      "name": "Call of Duty",
+      "description": "Competitive FPS and campaigns.",
+      "review": "Call of Duty delivers solid gunplay and variety — campaign, multiplayer, and sometimes zombies. Great for short sessions and stream; the action stays high.",
+      "rating": 5,
+      "dateStarted": "2023-11-01",
+      "dateCompleted": null,
+      "links": [],
+      "youtubeVideoId": "0E44DClsX5Q",
+      "platform": "PC",
+      "genre": "FPS",
+      "tags": ["fps", "multiplayer", "stream"],
+      "status": "playing",
+      "image": "call-of-duty.png"
+    },
+    {
+      "id": "portal-2",
+      "name": "Portal 2",
+      "description": "Puzzle FPS with portals and wit.",
+      "review": "Portal 2 is a classic. The puzzles are clever, the writing is sharp, and co-op adds a whole extra campaign. Still holds up and always fun to revisit or show on stream.",
+      "rating": 5,
+      "dateStarted": "2023-08-01",
+      "dateCompleted": "2023-10-01",
+      "links": [],
+      "youtubeVideoId": "tax4e4hBBZc",
+      "platform": "PC",
+      "genre": "Puzzle / FPS",
+      "tags": ["puzzle", "co-op", "stream"],
+      "status": "completed",
+      "image": "portal-2.png"
+    },
+    {
+      "id": "example-game",
+      "name": "Example Game",
+      "description": "Template.",
+      "review": "Write what you thought about the game here. Line breaks are kept.",
+      "rating": 3,
+      "dateStarted": "2026-01-01",
+      "dateCompleted": "2026-02-01",
+      "links": [
+        { "label": "Tutorial", "url": "https://example.com/tutorial" }
+      ],
+      "youtubeVideoId": "dQw4w9WgXcQ",
+      "platform": "PC",
+      "genre": "Adventure",
+      "tags": ["example"],
+      "status": "completed"
+    }
+  ]
+}

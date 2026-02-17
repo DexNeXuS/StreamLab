@@ -1,0 +1,218 @@
+/* Header, brand, search overlay, nav-desktop shell, icon-btn, twitch */
+
+.dx-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(7, 7, 12, 0.72);
+  backdrop-filter: blur(18px);
+}
+
+.dx-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 0;
+}
+
+.dx-nav-desktop {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  flex: 1 1 auto;
+  justify-content: center;
+  max-width: 600px;
+}
+
+@media (min-width: 869px) {
+  .dx-nav-desktop {
+    display: flex;
+  }
+}
+
+.dx-header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.dx-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid var(--dx-border);
+  background: var(--dx-surface);
+  color: var(--dx-text);
+  border-radius: var(--dx-radius-sm);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 120ms ease-out, border-color 120ms ease-out, transform 100ms ease-out;
+}
+
+.dx-icon-btn:hover {
+  background: var(--dx-surface-2);
+  border-color: rgba(139, 92, 246, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -6px rgba(139, 92, 246, 0.4);
+}
+
+.dx-icon-btn:focus-visible {
+  outline: 2px solid rgba(139, 92, 246, 0.9);
+  outline-offset: 2px;
+}
+
+.dx-icon-btn .iconify {
+  font-size: 20px;
+  color: var(--dx-purple-2);
+}
+
+.dx-header-social {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  justify-content: flex-end;
+}
+
+@media (min-width: 769px) {
+  .dx-header-social {
+    display: flex;
+  }
+}
+
+/* Twitch login hidden until implemented */
+.dx-twitch-slot {
+  display: none !important;
+}
+
+.dx-twitch-login {
+  font-size: 13px;
+  padding: 8px 12px;
+}
+
+.dx-search-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(7, 7, 12, 0.85);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 80px 18px 0;
+}
+
+.dx-search-overlay[aria-hidden="true"],
+.dx-search-overlay[hidden] {
+  display: none !important;
+}
+
+.dx-search-overlay-inner,
+.dx-search-overlay-wrap {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 14px 16px;
+  border-radius: var(--dx-radius);
+  border: 1px solid var(--dx-border);
+  background: rgba(12, 12, 20, 0.95);
+  box-shadow: var(--dx-shadow);
+}
+
+.dx-search-overlay-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.dx-search-overlay-row .dx-input {
+  flex: 1;
+}
+
+.dx-search-close {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid var(--dx-border);
+  background: var(--dx-surface);
+  color: var(--dx-text);
+  border-radius: var(--dx-radius-sm);
+  cursor: pointer;
+}
+
+.dx-search-close:hover {
+  background: var(--dx-surface-2);
+}
+
+.dx-search-close:focus-visible {
+  outline: 2px solid rgba(139, 92, 246, 0.9);
+  outline-offset: 2px;
+}
+
+.dx-search-close .iconify {
+  color: rgba(139, 92, 246, 0.9);
+}
+
+.dx-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.dx-logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.95), rgba(192, 132, 252, 0.9));
+  box-shadow: 0 14px 36px rgba(139, 92, 246, 0.25);
+}
+
+.dx-logo-img {
+  display: block;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  object-fit: contain;
+  background: transparent;
+  box-shadow: none;
+}
+
+.dx-brand-title {
+  display: block;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--dx-text), var(--dx-purple-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dx-brand-subtitle {
+  display: block;
+  font-size: 12px;
+  color: var(--dx-text-3);
+  margin-top: 1px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+

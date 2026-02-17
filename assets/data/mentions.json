@@ -1,0 +1,22 @@
+[
+  {
+    "name": "tawmae",
+    "url": "https://tawmae.xyz",
+    "description": "Streamer.bot extensions, OBS widgets & overlays"
+  },
+  {
+    "name": "Gael LEVEL",
+    "url": "https://www.youtube.com/gaellevel",
+    "description": "Twitch stream automation, advanced overlays & Streamer.bot deep dives"
+  },
+  {
+    "name": "Harris Heller",
+    "url": "https://www.youtube.com/harrisheller",
+    "description": "Streaming, branding, Stream Beats, and creator tools"
+  },
+  {
+    "name": "Nutty",
+    "url": "https://www.youtube.com/nuttylmao",
+    "description": "Stream tips, advanced OBS tricks, and overlay ideas"
+  }
+]

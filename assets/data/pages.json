@@ -1,0 +1,385 @@
+{
+  "pages": [
+    {
+      "slug": "home",
+      "title": "Home",
+      "description": "A quick hub for DexNeXuS streaming resources.",
+      "group": "Start Here",
+      "order": 0,
+      "tags": [
+        "dexnexus",
+        "hub"
+      ],
+      "contentFile": "content/0-home.html"
+    },
+    {
+      "slug": "twitch",
+      "title": "Twitch",
+      "description": "My Twitch setup: OBS, Streamer.bot, Touch Portal, VoiceMeeter, VoiceMod, and more.",
+      "group": "Streaming",
+      "order": 0,
+      "tags": [
+        "twitch",
+        "streaming"
+      ],
+      "contentFile": "content/60-twitch.html"
+    },
+    {
+      "slug": "commands",
+      "title": "Commands",
+      "description": "Twitch chat commands used on stream.",
+      "group": "Streaming",
+      "order": 10,
+      "tags": [
+        "twitch",
+        "commands"
+      ],
+      "contentFile": "content/61-commands.html"
+    },
+    {
+      "slug": "streamerbot",
+      "title": "Streamer.bot",
+      "description": "Actions, snippets, and workflow ideas.",
+      "group": "Resources",
+      "order": 10,
+      "tags": [
+        "streamerbot",
+        "automation"
+      ],
+      "contentFile": "content/10-streamerbot.html"
+    },
+    {
+      "slug": "emotes",
+      "title": "Emotes",
+      "description": "Channel emotes for Twitch — all sets in one place.",
+      "group": "Streaming",
+      "order": 11,
+      "tags": [
+        "twitch",
+        "emotes",
+        "channel"
+      ],
+      "cardImage": "assets/images/page-images/emotes/dexraid/dexraid_56.png",
+      "contentFile": "content/59-emotes.html"
+    },
+    {
+      "slug": "obs",
+      "title": "OBS",
+      "description": "Scenes, sources, and widget notes.",
+      "group": "Resources",
+      "order": 11,
+      "tags": [
+        "obs",
+        "streaming"
+      ],
+      "contentFile": "content/20-obs.html"
+    },
+    {
+      "slug": "touch-portal",
+      "title": "Touch Portal",
+      "description": "Buttons, pages, and integrations.",
+      "group": "Resources",
+      "order": 12,
+      "tags": [
+        "touch-portal",
+        "control"
+      ],
+      "contentFile": "content/30-touch-portal.html"
+    },
+    {
+      "slug": "html-widgets",
+      "title": "HTML Widgets",
+      "description": "Small browser source widgets and experiments.",
+      "group": "Resources",
+      "order": 13,
+      "tags": [
+        "html",
+        "css",
+        "js",
+        "browser-source"
+      ],
+      "contentFile": "content/40-html-widgets.html"
+    },
+    {
+      "slug": "voicemeeter",
+      "title": "VoiceMeeter",
+      "description": "Audio routing and mixing for stream — game, music, mic, and alerts.",
+      "group": "Resources",
+      "order": 14,
+      "tags": [
+        "voicemeeter",
+        "audio",
+        "streaming"
+      ],
+      "contentFile": "content/64-voicemeeter.html"
+    },
+    {
+      "slug": "games",
+      "title": "Games Played",
+      "description": "Games I've played on stream — with ratings, dates, trailers, and thoughts.",
+      "group": "Streaming",
+      "order": 15,
+      "tags": [
+        "twitch",
+        "games",
+        "stream"
+      ],
+      "contentFile": "content/50-games.html"
+    },
+    {
+      "slug": "voicemod",
+      "title": "VoiceMod",
+      "description": "Voice effects and real-time modulation for stream.",
+      "group": "Resources",
+      "order": 15,
+      "tags": [
+        "voicemod",
+        "voice",
+        "streaming"
+      ],
+      "contentFile": "content/65-voicemod.html"
+    },
+    {
+      "slug": "streamelements",
+      "title": "StreamElements",
+      "description": "Overlays, loyalty, alerts, and Twitch integrations.",
+      "group": "Resources",
+      "order": 16,
+      "tags": [
+        "streamelements",
+        "overlays",
+        "twitch"
+      ],
+      "contentFile": "content/66-streamelements.html"
+    },
+    {
+      "slug": "king-queen",
+      "title": "King-Queen overlay",
+      "description": "King & Queen overlay for OBS with Streamer.bot WebSocket ping.",
+      "group": "Resources",
+      "order": 20,
+      "tags": [
+        "king-queen",
+        "overlay",
+        "streamerbot",
+        "obs"
+      ],
+      "cardImage": "assets/images/page-images/king-queen.png",
+      "contentFile": "content/15-king-queen.html"
+    },
+    {
+      "slug": "streaming-rota",
+      "title": "Streaming Rota",
+      "description": "When I'm next streaming — weekly schedule and times.",
+      "group": "Streaming",
+      "order": 20,
+      "tags": [
+        "twitch",
+        "schedule",
+        "rota",
+        "streaming"
+      ],
+      "contentFile": "content/62-streaming-rota.html"
+    },
+    {
+      "slug": "ollama",
+      "title": "Ollama (Streamer.bot)",
+      "description": "Streamer.bot action for Ollama chat replies with INI config.",
+      "group": "Resources",
+      "order": 21,
+      "tags": [
+        "ollama",
+        "streamerbot",
+        "chatbot",
+        "ini"
+      ],
+      "contentFile": "content/16-ollama.html"
+    },
+    {
+      "slug": "rocksmith",
+      "title": "Rocksmith",
+      "description": "OBS overlay for Rocksmith 2014 + RockSniffer; current song and live stats.",
+      "group": "Resources",
+      "order": 22,
+      "tags": [
+        "rocksmith",
+        "rocksniffer",
+        "overlay",
+        "obs",
+        "streamerbot"
+      ],
+      "contentFile": "content/22-rocksmith.html"
+    },
+    {
+      "slug": "flash-sale",
+      "title": "Flash Sale",
+      "description": "Turn any Streamer.bot channel point reward into a timed flash sale.",
+      "group": "Resources",
+      "order": 23,
+      "tags": [
+        "flash sale",
+        "streamerbot",
+        "twitch",
+        "channel points"
+      ],
+      "contentFile": "content/23-flash-sale.html"
+    },
+    {
+      "slug": "cmd-ctrl",
+      "title": "CMD CTRL",
+      "description": "Turn Streamer.bot commands, rewards, timers, or actions on/off (great with Touch Portal).",
+      "group": "Resources",
+      "order": 24,
+      "tags": [
+        "cmd ctrl",
+        "streamerbot",
+        "touch portal",
+        "toggle"
+      ],
+      "contentFile": "content/24-cmd-ctrl.html"
+    },
+    {
+      "slug": "get-commands",
+      "title": "Get Commands",
+      "description": "Auto-export and post Streamer.bot commands to chat via JSON; custom descriptions, prefix, mod-only.",
+      "group": "Resources",
+      "order": 25,
+      "tags": [
+        "get commands",
+        "streamerbot",
+        "touch portal",
+        "commands",
+        "json"
+      ],
+      "contentFile": "content/25-get-commands.html"
+    },
+    {
+      "slug": "random-media-from-folder",
+      "title": "Random Media From Folder",
+      "description": "Streamer.bot action to pick a random file (video, image, music, or text) from a folder.",
+      "group": "Resources",
+      "order": 26,
+      "tags": [
+        "random media",
+        "streamerbot",
+        "folder",
+        "video",
+        "image",
+        "music"
+      ],
+      "contentFile": "content/26-random-media-from-folder.html"
+    },
+    {
+      "slug": "inventory",
+      "title": "DexNeXuS Inventory",
+      "description": "Items, crafting, materials, loot tables, and recipes.",
+      "group": "Streaming",
+      "order": 30,
+      "tags": [
+        "twitch",
+        "inventory",
+        "items",
+        "nexi"
+      ],
+      "hideFromNav": true,
+      "contentFile": "content/63-inventory.html"
+    },
+    {
+      "slug": "about",
+      "title": "About DexNeXuS",
+      "description": "Who I am — music, code, and the stuff in between.",
+      "group": "About",
+      "order": 90,
+      "tags": [
+        "about"
+      ],
+      "contentFile": "content/90-about.html"
+    },
+    {
+      "slug": "music",
+      "title": "Music",
+      "description": "Original music, Suno tracks, and more.",
+      "group": "About",
+      "order": 91,
+      "tags": [
+        "music"
+      ],
+      "contentFile": "content/91-music.html"
+    },
+    {
+      "slug": "privacy",
+      "title": "Privacy Policy",
+      "description": "How this site handles your data.",
+      "group": "Legal",
+      "order": 92,
+      "tags": [
+        "privacy",
+        "legal"
+      ],
+      "hideFromNav": true,
+      "contentFile": "content/92-privacy.html"
+    },
+    {
+      "slug": "terms",
+      "title": "Terms of Service",
+      "description": "Terms for using this site.",
+      "group": "Legal",
+      "order": 93,
+      "tags": [
+        "terms",
+        "legal"
+      ],
+      "hideFromNav": true,
+      "contentFile": "content/93-terms.html"
+    },
+    {
+      "slug": "viewer",
+      "title": "Guide",
+      "description": "View how-to guides and text docs.",
+      "group": "Legal",
+      "order": 94,
+      "tags": [
+        "viewer",
+        "guide"
+      ],
+      "hideFromNav": true,
+      "contentFile": "content/94-viewer.html"
+    },
+    {
+      "slug": "game",
+      "title": "Game",
+      "description": "Game detail — trailer, review, dates, links.",
+      "group": "Streaming",
+      "order": 96,
+      "tags": [
+        "games",
+        "stream"
+      ],
+      "hideFromNav": true,
+      "contentFile": "content/96-game.html"
+    },
+    {
+      "slug": "backups",
+      "title": "Backups",
+      "description": "Personal backup storage for OBS, Streamer.bot, Touch Portal, and other configs.",
+      "group": "About",
+      "order": 98,
+      "tags": [
+        "backups"
+      ],
+      "hideFromNav": true,
+      "contentFile": "content/98-backups.html"
+    },
+    {
+      "slug": "links",
+      "title": "Links",
+      "description": "Quick links to my profiles and resources.",
+      "group": "About",
+      "order": 99,
+      "tags": [
+        "links"
+      ],
+      "contentFile": "content/99-links.html"
+    }
+  ]
+}
